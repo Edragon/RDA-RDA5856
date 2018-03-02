@@ -1,0 +1,232 @@
+# That file is used to describes the compilation variable
+# dependent on the targeted Chip. Typically, it is used to 
+# define specifi Macros aiming at configuring the code.
+
+# Capitalized chip name.
+CT_ASIC_CAPD := 5856
+
+# Chip die type
+override CT_CHIP_DIE := 5856
+
+# The chip ID is required by the Makefiles and by the code.
+CHIP_ASIC_ID:=15
+CHIP_EXPORT_FLAG += CHIP_ASIC_ID=15
+
+CHIP_CPU_TYPE=mips
+GLOBAL_EXPORT_FLAG += CHIP_CPU_IS_MIPS
+CHIP_BTOVERLAY_SUPPORTED := 2
+
+CHIP_HAS_BTCPU := 1
+#COMBINED_HOST := 2
+#MEMORY_POOL_SUPPORT := 1
+GLOBAL_EXPORT_FLAG += CHIP_HAS_BTCPU=1
+#GLOBAL_EXPORT_FLAG += COMBINED_HOST=2
+#GLOBAL_EXPORT_FLAG += MEMORY_POOL_SUPPORT=1
+CHIP_EXPORT_FLAG += CHIP_HAS_BTCPU=${CHIP_HAS_BTCPU}
+
+CHIP_HAS_BTCPU_ROM := 1
+CHIP_EXPORT_FLAG += CHIP_HAS_BTCPU_ROM=${CHIP_HAS_BTCPU_ROM}
+
+CHIP_EXPORT_FLAG += CHIP_HAS_SYS_IFC2
+CHIP_EXPORT_FLAG += CHIP_HAS_NOCACHE
+
+CHIP_EXPORT_FLAG += CHIP_EDGE_SUPPORTED=0
+#[5856 u02] sys clock : voc clock >= 1:2,  max voc clock is 104MHz now, so set sys clock to 52MHz.
+CHIP_EXPORT_FLAG += CHIP_MAX_SPEED=104000000  #78000000   #104000000
+CHIP_EXPORT_FLAG += CHIP_HAS_AUTOSIMCLK=1
+CHIP_EXPORT_FLAG += CHIP_SYS_CRITICAL_SECTION_REG=0xA1A01014
+CHIP_EXPORT_FLAG += CHIP_HAS_FLSH_CACHE=1
+
+# Penultimate patch used for GDB XCPU and last patch Internal RAM area
+# used for GDB BCPU.
+CHIP_EXPORT_FLAG += CHIP_NUMBER_OF_PATCHES=16
+
+CHIP_HAS_USB := 1
+CHIP_EXPORT_FLAG += CHIP_HAS_USB=$(CHIP_HAS_USB)
+CHIP_EXPORT_FLAG += CHIP_HAS_PXTS_LEVELS=1
+CHIP_EXPORT_FLAG += CHIP_HAS_AHB_MONITOR=1
+CHIP_EXPORT_FLAG += CHIP_HAS_SIM_T0T1=0
+CHIP_EXPORT_FLAG += CHIP_HAS_SDIO=1
+
+# The following variables are used to configure the SPAL layer
+CHIP_EXPORT_FLAG += CHIP_CAP_ON_APB=0
+CHIP_EXPORT_FLAG += CHIP_IFC_RF_TX_CHANNEL=1
+CHIP_EXPORT_FLAG += CHIP_ITLV_8PSK_SUPPORTED=0
+CHIP_EXPORT_FLAG += CHIP_VITAC_8PSK_SUPPORTED=0
+CHIP_EXPORT_FLAG += CHIP_XCOR_8PSK_SUPPORTED=0
+CHIP_EXPORT_FLAG += CHIP_XCOR_HAS_SLIDING_WINDOW=1
+CHIP_EXPORT_FLAG += CHIP_XCOR_DELAY8=0
+CHIP_EXPORT_FLAG += CHIP_CIPHER_A53_SUPPORTED=0
+CHIP_EXPORT_FLAG += CHIP_HAS_ANA_RF=0
+CHIP_EXPORT_FLAG += CHIP_HAS_14_BIT_RF_PATH=1
+
+# The following variables are used to configure the SPP layer
+CHIP_EXPORT_FLAG += CHIP_CHEST_LEN=5
+
+# The variable SPC_IF_VER can be overwritten by the CT_TARGET.def file.
+SPC_IF_VER ?= 5
+CHIP_EXPORT_FLAG += SPC_IF_VER=${SPC_IF_VER}
+
+# about HAL SYS
+CHIP_HAS_ASYNC_TCU ?= 1
+CHIP_EXPORT_FLAG += CHIP_HAS_ASYNC_TCU=${CHIP_HAS_ASYNC_TCU}
+CHIP_EXPORT_FLAG += CHIP_HAS_ASYNC_BCPU=0
+
+# About the host/debug uart
+CHIP_EXPORT_FLAG += CHIP_HAS_DBG_UART_SW_FLOW_CONTROL=1
+
+# The following variables are used to configure the VPP layer
+CHIP_WITH_VOC     = 1
+CHIP_WITH_VOC_ROM = 0
+CHIP_EXPORT_FLAG += CHIP_WITH_VOC=$(CHIP_WITH_VOC)
+CHIP_EXPORT_FLAG += CHIP_WITH_VOC_ROM=$(CHIP_WITH_VOC_ROM)
+
+# About the UART
+CHIP_EXPORT_FLAG += CHIP_STD_UART_QTY=2
+
+# About the SPI
+# Number of CS on SPI
+CHIP_EXPORT_FLAG += CHIP_SPI_CS_QTY=3
+# Number of CS on SPI2
+CHIP_EXPORT_FLAG += CHIP_SPI2_CS_QTY=1
+# Number of CS on SPI3
+CHIP_EXPORT_FLAG += CHIP_ISPI_CS_QTY=3
+# The DOI pin of the SPI modules
+CHIP_EXPORT_FLAG += CHIP_SPI_HAS_DIO=1
+# The pattern mode of the SPI can do the WHILE rejection
+CHIP_EXPORT_FLAG += CHIP_SPI_HAS_PATTERN_WHILE=1
+# The SPI module registers to force its pin values (0, 1, Z)
+CHIP_EXPORT_FLAG += CHIP_SPI_HAS_INTERNAL_FORCE=1
+
+# Needed for SC code
+CHIP_EXPORT_FLAG += __TARGET__ __XCPU__ __JADE__
+
+# SXR: Location for stack and context heaps.
+CHIP_EXPORT_FLAG += SXR_CSP_TK_STCK_HEAP=0
+CHIP_EXPORT_FLAG += SXR_CSP_JB_STCK_HEAP=0
+CHIP_EXPORT_FLAG += SXR_CSP_JB_CTX_HEAP=0
+
+# About the AIF / Audio
+CHIP_EXPORT_FLAG += CHIP_HAS_I2S_DI_1=1
+CHIP_EXPORT_FLAG += CHIP_HAS_STEREO_DAC=1
+
+# Misc
+CHIP_EXPORT_FLAG += CHIP_HAS_GOUDA=0
+CHIP_EXPORT_FLAG += CHIP_HAS_SYS_IFC_SIZE=1
+CHIP_EXPORT_FLAG += CHIP_HAS_SDMMC=1
+
+# Keypad
+CHIP_EXPORT_FLAG += CHIP_KEY_COL_NB=8
+CHIP_EXPORT_FLAG += CHIP_KEY_ROW_NB=8
+
+# About the proxy memory
+CHIP_EXPORT_FLAG += CHIP_HAS_PROXY_MEMORY=0
+
+# The variable FAST_CLOCK_156M can be overwritten by the CT_ASIC_fpga.def file.
+FAST_CLOCK_156M ?= 156000000
+CHIP_EXPORT_FLAG += FAST_CLOCK_156M=${FAST_CLOCK_156M}
+
+# FM line-in record
+FM_LINEIN_RECORD ?= 1
+
+# --- Beginning of software workarounds ---
+
+# Headphone detection
+CHIP_EXPORT_FLAG += VMIC_POWER_ON_WORKAROUND
+
+# Audio mute for BT workaround
+CHIP_EXPORT_FLAG += AUD_MUTE_FOR_BT_WORKAROUND
+
+# RFSPI IFC workaround
+#CHIP_EXPORT_FLAG += RFSPI_IFC_WORKAROUND
+
+# Lock MCP to achieve a higher rx performance
+CHIP_EXPORT_FLAG += PAL_WINDOWS_LOCK_MCP_ON_RX
+
+# For Gallite, the window size is a little bit extended and the
+# PLL lock time is changed because of a latency in the AHB bus arbitration:
+# the IFC on the baseband side does not get access to the external
+# memory for a given time, because of many write accesses on the
+# system side.
+# See the GreenstoneImprovements wiki page for more info.
+CHIP_EXPORT_FLAG += PAL_WINDOW_EXTENSION_FOR_AHB_LATENCY
+
+# Always enable UART break interrupt wakeup mode on 8809
+BT_UART_BREAK_INT_WAKEUP := 1
+
+# --- End of software workarounds ---
+
+# Boot code in ROM.
+SRC_IN_ROM := \
+	boot_bist.c \
+    boot_dma.c \
+    boot_host.c \
+    boot_march_c_bbcp2.c \
+    boot_monitor.c \
+    boot_nand.c \
+    boot_ram.S \
+    boot_rom.S \
+    boot_romstring.c \
+    boot_rom_version.c \
+    boot_test.S \
+    boot_uart_monitor.c \
+    boot_usb.c \
+    boot_usb_monitor.c \
+    boot_irq_dispatch.c \
+    
+    
+# Chip memory map dependent.
+FLASH_BASE                  := 0xFFFFFFFFa8000000
+EXT_RAM_BASE                := 0xFFFFFFFFa2000000
+BB_DUALPORT_SRAM_BASE       := 0xFFFFFFFFa1B00000
+SYS_SRAM_BASE               := 0xFFFFFFFFa1C00000
+BB_SRAM_BASE                := 0xFFFFFFFFa1980000
+BT_SRAM_BASE                := 0xFFFFFFFFa1C80000
+INT_ROM_BASE                := 0xFFFFFFFFa1E00000
+BT_ROM_BASE                 := 0xFFFFFFFFa1E80000
+
+BB_DUALPORT_SRAM_SIZE       := 0x4000
+SYS_SRAM_SIZE               := 0x10000
+BB_SRAM_SIZE                := 0x0
+BT_SRAM_SIZE                := 0x8000
+INT_ROM_SIZE                := 0x4000
+BT_ROM_SIZE                 := 0x10000
+BT_ROM_SRAM_SIZE                := 0x0
+TFLASH_FLASH_SIZE			:= 0x1000
+TFLASH_RAM_SIZE				:= 0x200
+
+# ROM memory map dependent.
+### TODO actualize with what is already reserved by the ROM
+ROM_MISC_BASE               := 0xFFFFFFFFa1C000A0
+ROM_MISC_UBASE              := 0xFFFFFFFFA1C000A0
+ROM_MISC_SIZE               := 0x1c0
+# The memory between ROM_MISC_END and SYS_SRAM_AVAILABLE_BASE is used to save
+# some fix pointers and some boot sector structures.
+SYS_SRAM_AVAILABLE_BASE     := 0xFFFFFFFFa1C00280
+SYS_SRAM_END                := SYS_SRAM_BASE+SYS_SRAM_SIZE-4
+
+RESERVED_MBX_SIZE           := 0x0
+
+# *************************************************************
+### TODO this should be in target or in the linker as it is not chip dependent. Those are software dependent.
+SYS_SRAM_IRQ_STACKWATCH_SIZE := 0x80
+XCPU_IRQ_STACK_SIZE          := 0xE00
+#       /* DEBUG: stack for page spy all writes watching
+#        * The Room is taken from the irq stackwatch*/
+ifneq "${PAGE_SPY_LOG}" "1"
+    PS_STACK_SIZE               := 0x0
+else
+    PS_STACK_SIZE               := 0x40
+endif
+BTCPU_IRQ_STACK_SIZE          := 0xc00
+
+# *************************************************************
+
+# List of symbols to exclude from the BCPU elf and BCPU ROM elf,
+# as XCPU elf has its own version of these symbols.
+STRIP_ROM_OBJ2STRIP_FILE ?= platform/chip/${CT_ASIC}/defs/xcpu_symbols_to_strip
+STRIP_BTCPU_OBJ2STRIP_FILE ?= platform/chip/${CT_ASIC}/defs/btcpu_symbols_to_strip
+
+LINKER_MASTER ?= xcpu_master_flash.ld
+BTCPU_LINKER_MASTER ?= btcpu_flash.ld
+

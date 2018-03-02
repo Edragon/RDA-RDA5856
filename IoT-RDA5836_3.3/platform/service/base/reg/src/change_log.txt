@@ -1,0 +1,59 @@
+V1.6
+Data:2008-2-2
+Caoxh:
+1.Clear up the waining.
+2.changed header file refers to.
+
+V1.5
+Data:2008-1-25
+Caoxh:
+1.fixed a bug in REG_GetDefaultValue(). if can't find the reg entry,this function return success as of old.
+
+V1.4
+Date: 2007-11-22
+Caoxh:
+1.fiex the bug about REG_Init().
+2.create a new test code.
+3.tested all REG Apis.
+
+V1.3
+Date: 2007-11-15
+Caoxh:
+1.Rewrite REG_QueryDefaultValue().
+2.Clean code.
+
+V1.2
+Date: 2007-11-15
+1.重写了解析default_cfg_string的流程。
+2.进行了代码清理。
+
+V1.1
+Date: 2007-11-7
+Caoxh:
+1.对g_sRSK进行了初始化
+2.修改了g_iMaxRecordNum的值的获取方法，原来的值是错的。
+3.修改了REG_FindValueName()函数，如果找不到匹配的value name，返回一个错误嘛，原来返回的是0，而0是一个合法的值。
+
+----------------------------------2007-10-09----------------------------------
+1.去掉了编译宏_CSW_VER_2_所包含的代码。
+----------------------------------2007-9-11----------------------------------
+1.修改了REG_Init_Local()中将四个字节的内容读出放在UINT16型的变量@iRegSize的BUG，
+  现将@iRegSize定义为UINT32类型；
+2.修改了REG_Buff2CTR()中的BUG：当读出的内容为未经初始化的非法值时，DSM_MemCpy()可能会越界。
+
+----------------------------------2007-7-20----------------------------------
+1.去掉reg_storage.h和reg_storage.c两个文件，将其中的内容合并到reg_local.h和reg_local.c中
+----------------------------------2007-7-3----------------------------------
+1.REG_QueryDefaultValue()函数中添加了Reg_down()，Reg_up()
+----------------------------------2007-4-17----------------------------------
+1.加了一些打印语句
+----------------------------------2007-3-6----------------------------------
+1.在vc warning level-4下去掉了一些警告，未发布。
+
+----------------------------------2007-2-8----------------------------------
+r0.2
+1.将打印语句从dsm_printf改为了D。
+
+----------------------------------2007-2-8----------------------------------
+r0.1
+1.创建：针对csw_2.0和vds应用,将reg代码重新写了一遍。

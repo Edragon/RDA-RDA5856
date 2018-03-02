@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Bin\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>5856T_nolcd</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\Simulator.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\Simulator.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Simulator.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>Bin/Simulator.exe</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\target\$(TargetName)\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;MMI_ON_WIN32;CSD_KAL_MNT;BUILD_DATE;BUILD_TIME;DAF_DECODE;__AT_SUPPORT__;BT_SUPPORT;CT_ERES=;AUD_MAX_LEVEL=15;OS_KERNEL=3;__SLIMMMI_TCPIP__;WPCAP;SUPPORT_SOCKET_CUST_DEFINE_NUM=32;CAMERA_SUPPORT;__AT_MOD_BT__;__AT_MOD_COMMON__;__AT_MOD_MUSIC__;__AT_MOD_RECORD__;AT_CMD_LINE_BUFF_LEN=2048;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\Simulator.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <AdditionalOptions> /Zm200 %40"IncOption.txt"</AdditionalOptions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+    </ClCompile>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <PostBuildEvent>
+      <Command>copy ..\target\$(TargetName)\resource\res.bin Bin</Command>
+      <Message>build resource files</Message>
+    </PostBuildEvent>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\Simulator.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\Simulator.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>Bin/$(TargetName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\lib\gb\lib;..\lib;lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Winmm.lib;Setupapi.lib;libstack.lib;libbtadp.lib;GBMMI.lib;gb_lt.lib;gb_sc.lib;_gbapi_.lib;wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy ..\platform\service\include\event.h SimulatorLayer\firmware\include\event.h</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_bas.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_mgr.c" />
+    <ClCompile Include="..\at\ats\bt\src\at_cmd_bt.c" />
+    <ClCompile Include="..\at\ats\common\src\at_cmd_common.c" />
+    <ClCompile Include="..\at\ats\main\src\at_command_table.c" />
+    <ClCompile Include="..\at\ats\main\src\at_main.c" />
+    <ClCompile Include="..\at\ats\music\src\at_cmd_music.c" />
+    <ClCompile Include="..\at\ats\record\src\at_cmd_record.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_a2dp.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_avrcp.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_hfp.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_hid.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_ias.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_map.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_obex.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_pbap.c" />
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_spp.c" />
+    <ClCompile Include="..\at\ate\src\at_cmdlist.c" />
+    <ClCompile Include="..\at\ate\src\at_common.c" />
+    <ClCompile Include="..\at\ate\src\at_map.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_module.c" />
+    <ClCompile Include="..\at\ate\src\at_parser.c" />
+    <ClCompile Include="..\at\ate\src\at_sa.c" />
+    <ClCompile Include="..\at\ate\src\at_uart.c" />
+    <ClCompile Include="..\at\utility\src\at_trace.c" />
+    <ClCompile Include="..\at\utility\src\at_utility.c" />
+    <ClCompile Include="..\platform\edrv\btd\bttask\src\bttask_message.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\adp_TCPIP_Event.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\Aud_main.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\bal_framework.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\bal_init.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\bal_resource.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\cam_main.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\device.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\MultimediaTask.c" />
+    <ClCompile Include="..\platform\service\base\bal\src\TaskInit.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_common.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_delete.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_dialog.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_directory.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_input.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_lcd_display.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_led8s_display.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_list.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_menu.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_playlist.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_progress.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_rgblcd_display.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_scroll.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_searchlist.c" />
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_slider.c" />
+    <ClCompile Include="..\platform\service\iotapi\src\iot_bt.c" />
+    <ClCompile Include="..\platform\system\mdi\mmc\src\mmc_audiocommon.c" />
+    <ClCompile Include="ATDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="DrawLed8s.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="keypad.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="ScreenDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="simdevice.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="Simulator.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorDlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\bal_task_win32.c" />
+    <ClCompile Include="SimulatorLayer\firmware\src\mmc_task_win32.c" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="TraceModule.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\cos_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\dm_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\drv_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\fmd_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\FS_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\Mci_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\pm_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\sul_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\sxr_os.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\TM_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\uart_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\aac_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\amr_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\ap_audio.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\ap_id3_parser.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\daf_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\simulator_audio_mci.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\vm_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\wav_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\wma_info.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\hcit_win32_usb.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\papi_win32.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\rdabt_main.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\wifi\src\winpcap_for_wifi.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_calendar\src\ap_calendar.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_common.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_fselector.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_media.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_message.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_playlist.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_testmode.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\enhanced_oggtag.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\MainTask.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_music\src\ap_music.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_music\src\ap_music_lyric.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_fm\src\ap_fm.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_record\src\ap_record.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_setting\src\ap_setting.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_idle\src\ap_idle.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_idle\src\ap_timer.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_usbdisk\src\ap_usbdisk.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_linein\src\ap_linein.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_charging\src\ap_charging.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"> /Zm200 %40"IncOption.txt"  /Zm200 %40"IncOption.txt"</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Simulator.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\CoolSimulator.ico" />
+    <CustomBuild Include="res\Simulator.ico" />
+    <CustomBuild Include="res\Simulator.rc2">
+      <FileType>RC</FileType>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_mgr.h" />
+    <ClInclude Include="..\at\ats\bt\include\at_cmd_bt.h" />
+    <ClInclude Include="..\at\ats\common\include\at_cmd_common.h" />
+    <ClInclude Include="..\at\ats\music\include\at_cmd_music.h" />
+    <ClInclude Include="..\at\ats\record\include\at_cmd_record.h" />
+    <ClInclude Include="..\at\ats\tcpip\include\at_cmd_tcpip.h" />
+    <ClInclude Include="..\at\ats\wifi\include\at_cmd_wifi.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_a2dp.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_avrcp.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_hfp.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_map.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_pbap.h" />
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_spp.h" />
+    <ClInclude Include="..\at\ate\include\at_common.h" />
+    <ClInclude Include="..\at\ate\include\at_define.h" />
+    <ClInclude Include="..\at\ate\include\at_errcode.h" />
+    <ClInclude Include="..\at\ate\include\at_map.h" />
+    <ClInclude Include="..\at\ate\include\at_module.h" />
+    <ClInclude Include="..\at\ate\include\at_parser.h" />
+    <ClInclude Include="..\at\ate\include\at_sa.h" />
+    <ClInclude Include="..\at\ate\include\at_uart.h" />
+    <ClInclude Include="..\at\utility\include\at_cp.h" />
+    <ClInclude Include="..\at\utility\include\at_trace.h" />
+    <ClInclude Include="..\at\utility\include\at_utility.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\papi_impl.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\platform_config.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_a2dp.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_avrcp.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_common.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_hcit.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_hfp.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_main.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_manager.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_map.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_pbap.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_sharemem.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_spp.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_uart.h" />
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_uart_drv.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\ap_gui.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_const.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_lcd_display.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_led8s_display.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_resource.h" />
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_rgblcd_display.h" />
+    <ClInclude Include="..\platform\service\iotapi\include\iot_bt.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\lwipopts.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_api.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_api_msg.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_cc.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_perf.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_sys.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_autoip.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_debug.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_def.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_dhcp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_dns.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_err.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_etharp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_icmp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_icmp6.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_igmp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet6.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet_chksum.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_init.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip6.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip6_addr.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip_addr.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip_frag.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_mem.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_memp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_memp_std.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netbuf.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netdb.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netif.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netifapi.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_opt.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_pbuf.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ppp_oe.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_raw.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sio.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_slipif.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_asn1.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_msg.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_structs.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sockets.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_stats.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sys.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_tcp.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_tcp_impl.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_timers.h" />
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_udp.h" />
+    <ClInclude Include="..\platform\service\wifi\include\wifi_common.h" />
+    <ClInclude Include="..\platform\service\wifi\include\wifi_config.h" />
+    <ClInclude Include="..\platform\service\wifi\include\wifi_os.h" />
+    <ClInclude Include="ATDlg.h" />
+    <ClInclude Include="keypad.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="screen.h" />
+    <ClInclude Include="ScreenDlg.h" />
+    <ClInclude Include="simdevice.h" />
+    <ClInclude Include="Simulator.h" />
+    <ClInclude Include="SimulatorDlg.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\aud_snd_types.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cos.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cswtype.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cs_types.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_debug.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_overlay.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_sys.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_timers.h" />
+    <ClInclude Include="SimulatorStart.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TraceModule.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\base_prv.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\bt_drv.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cfw.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cmn_defs.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\cp_csw.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\csw.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\csw_mem_prv.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\csw_shell.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\dbg.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\dm.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\drv.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\errorcode.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\event.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\fmd_m.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\fs.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_host.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_uart.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\lcdd_m.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\pm.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\stdkey.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\sul.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\sxs_io.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\tm.h" />
+    <ClInclude Include="SimulatorLayer\firmware\include\ts.h" />
+    <ClInclude Include="SimulatorLayer\mci\mciinc\ap_audio.h" />
+    <ClInclude Include="SimulatorLayer\mci\mciInc\mci.h" />
+    <ClInclude Include="SimulatorLayer\bluetooth\include\hcit_win32_usb.h" />
+    <ClInclude Include="..\platform\edrv\btd\rdaStack\include\rdabt_hcit.h" />
+    <ClInclude Include="..\platform\edrv\btd\rdaStack\include\rdabt_main.h" />
+    <ClInclude Include="SimulatorLayer\wifi\include\winpcap_for_wifi.h" />
+    <ClInclude Include="..\apps\ap_calendar\include\ap_calendar.h" />
+    <ClInclude Include="..\apps\ap_main\include\ap_common.h" />
+    <ClInclude Include="..\apps\ap_main\include\ap_gui.h" />
+    <ClInclude Include="..\apps\ap_main\include\ap_media.h" />
+    <ClInclude Include="..\apps\ap_main\include\ap_message.h" />
+    <ClInclude Include="..\apps\ap_main\include\MainTask.h" />
+    <ClInclude Include="..\apps\ap_music\include\ap_music.h" />
+    <ClInclude Include="..\apps\ap_fm\include\ap_fm.h" />
+    <ClInclude Include="..\apps\ap_record\include\ap_record.h" />
+    <ClInclude Include="..\apps\ap_setting\include\ap_setting.h" />
+    <ClInclude Include="..\apps\ap_idle\include\ap_idle.h" />
+    <ClInclude Include="..\apps\ap_usbdisk\include\ap_usbdisk.h" />
+    <ClInclude Include="..\apps\ap_linein\include\ap_linein.h" />
+    <ClInclude Include="..\apps\ap_charging\include\ap_charging.h" />
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureBusiness.h" />
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureManager.h" />
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureRelation.h" />
+    <ClInclude Include="..\apps\ap_ime\include\Engine.h" />
+    <ClInclude Include="..\apps\ap_ime\include\EngineConfig.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbapi.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbApp.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbdef.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbim.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbtype.h" />
+    <ClInclude Include="..\apps\ap_ime\include\gbwchar.h" />
+    <ClInclude Include="..\apps\ap_ime\include\Misc.h" />
+    <ClInclude Include="..\apps\ap_ime\include\ProduceBusiness.h" />
+    <ClInclude Include="..\apps\ap_ime\include\ProduceManager.h" />
+    <ClInclude Include="..\apps\ap_wifispeaker\include\downloadmusic.h" />
+    <ClInclude Include="..\apps\ap_wifispeaker\include\PlayMedia.h" />
+    <ClInclude Include="..\apps\ap_camera\include\ap_camera.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Simulator.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

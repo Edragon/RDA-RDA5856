@@ -1,0 +1,139 @@
+; Installation inf for the RDA 5868 Bluetooth Module
+;
+; Copyright 2009 RDA plc 
+;
+
+
+[Version]
+Signature="$Windows NT$"
+Class=USB
+;ClassGUID={36fc9e60-c465-11cf-8056-444553540000}
+ClassGUID={f12d3cf8-b11d-457e-8641-be2af2d6d204}
+Provider=%RDA%
+DriverVer=09/24/2008,1.00.0000.0000
+CatalogFile=RDABlueCoreUSB.cat
+
+
+[Manufacturer]
+%MfgName%=RDA, NTx86.5.1,NTamd64...1
+
+[SourceDisksNames]
+1 = %RDA.Disk.Name%,,,
+
+[SourceDisksFiles]
+rdabcxp.sys = 1
+rdabc2k.sys = 1
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers
+RDABC.NTamd64...1 = 10, System32\Drivers
+RDABC.NTx86.5.1 = 10, System32\Drivers
+RDABC.NTx86 = 10, System32\Drivers
+
+
+;
+; Windows 2000
+;
+[RDA]
+%BlueCore.DeviceDesc%=RDABC.Inst,        USB\VID_0A12&PID_0001 ;RDA
+
+
+[RDABC.Inst.NTx86]
+CopyFiles=RDABC.NTx86
+AddReg=RDABC.AddReg.NTx86
+
+[RDABC.Inst.NTx86.Services]
+Addservice = RDABC, 0x00000002, RDABC.AddService.NTx86
+
+[RDABC.AddService.NTx86]
+DisplayName    = %RDABC.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\rdabc2k.sys
+LoadOrderGroup = Base
+AddReg=RDABC_Service.AddReg.NTx86
+
+[RDABC_Service.AddReg.NTx86]
+HKR,"Parameters","FDName",0x00000,"RDA"
+
+[RDABC.AddReg.NTx86]
+HKR,,DevLoader,,"*ntkern"
+HKR,,NTMPDriver,,"rdabc2k.sys"
+
+[RDABC.NTx86]
+rdabc2k.sys
+
+
+;
+; Windows XP and later
+;
+[RDA.NTx86.5.1]
+%BlueCore.DeviceDesc%=RDABC.Inst.NTx86.5.1,        USB\VID_0A12&PID_0001 ; RDA ...sira
+ 
+
+[RDABC.Inst.NTx86.5.1]
+CopyFiles=RDABC.NTx86.5.1
+AddReg=RDABC.AddReg.NTx86.5.1
+
+[RDABC.Inst.NTx86.5.1.Services]
+Addservice = RDABC, 0x00000002, RDABC.AddService.NTx86.5.1
+
+[RDABC.AddService.NTx86.5.1]
+DisplayName    = %RDABC.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\rdabcxp.sys
+LoadOrderGroup = Base
+AddReg=RDABC_Service.AddReg.NTx86.5.1
+
+[RDABC_Service.AddReg.NTx86.5.1]
+HKR,"Parameters","FDName",0x00000,"RDA"
+
+[RDABC.AddReg.NTx86.5.1]
+HKR,,DevLoader,,"*ntkern"
+HKR,,NTMPDriver,,"rdabcxp.sys"
+
+[RDABC.NTx86.5.1]
+rdabcxp.sys
+
+;
+; 64-bit Windows XP and later
+;
+[RDA.NTamd64...1]
+%BlueCore.DeviceDesc%=RDABC.Inst.NTamd64...1,        USB\VID_0A12&PID_0001 ; RDA ...sira
+
+
+[RDABC.Inst.NTamd64...1]
+CopyFiles=RDABC.NTamd64...1
+AddReg=RDABC.AddReg.NTamd64...1
+
+[RDABC.Inst.NTamd64...1.Services]
+Addservice = RDABC, 0x00000002, RDABC.AddService.NTamd64...1
+
+[RDABC.AddService.NTamd64...1]
+DisplayName    = %RDABC.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\rdabcxp.sys
+LoadOrderGroup = Base
+AddReg=RDABC_Service.AddReg.NTamd64...1
+
+[RDABC_Service.AddReg.NTamd64...1]
+HKR,"Parameters","FDName",0x00000,"RDA"
+
+[RDABC.AddReg.NTamd64...1]
+HKR,,DevLoader,,"*ntkern"
+HKR,,NTMPDriver,,"rdabcxp.sys"
+
+[RDABC.NTamd64...1]
+rdabcxp.sys
+
+[Strings]
+RDA="RDA"
+MfgName="RDA"
+BlueCore.DeviceDesc="RDA 5868 Bluetooth"
+
+

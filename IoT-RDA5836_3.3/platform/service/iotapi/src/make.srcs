@@ -1,0 +1,19 @@
+ifeq "${WIFI_MODEL}" "mcuwifi"
+C_SRC := \
+	iot_gpio.c \
+
+else
+
+C_SRC := \
+	iot_base.c \
+	iot_gpio.c \
+	iot_bt.c \
+	iot_uart.c \
+	iot_wifi.c \
+
+endif
+    
+
+
+
+

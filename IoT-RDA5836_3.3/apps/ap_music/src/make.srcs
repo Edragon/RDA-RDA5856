@@ -1,0 +1,18 @@
+S_SRC := 
+
+C_SRC := ap_music.c\
+         ap_music_lyric.c\
+
+
+#         ap_audio.c\
+         ap_id3_parser.c\
+         ap_input_stream.c\
+         daf_info.c\
+         wav_info.c\
+         wma_info.c\
+         aac_info.c\
+         amr_info.c\
+         vm_info.c
+         
+         
+  

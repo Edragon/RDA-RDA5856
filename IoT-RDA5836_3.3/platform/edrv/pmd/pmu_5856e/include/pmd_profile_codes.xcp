@@ -1,0 +1,21 @@
+<module name="PMD">
+
+    <!-- Functions -->
+    <fn name="pmd_OpalCsBlockingActivate"         id="0x12A0" group="PMD API"/>
+    <fn name="pmd_OpalCsDeactivate"               id="0x12A1" group="PMD API"/>
+    <fn name="pmd_OpalSpiRead"                    id="0x12A2" group="PMD API"/>
+    <fn name="pmd_OpalSpiWrite"                   id="0x12A3" group="PMD API"/>
+    <fn name="pmd_EnableOpalLdo"                  id="0x12A4" group="PMD API"/>
+    <fn name="pmd_OpalWrite"                      id="0x12A5" group="PMD API"/>
+    <fn name="pmd_OpalRead"                       id="0x12A6" group="PMD API"/>
+    <fn name="pmd_OpalSpiActivateCs"              id="0x12A7" group="PMD API"/>
+    <fn name="pmd_OpalSpiDeactivateCs"            id="0x12A8" group="PMD API"/>
+    <fn name="pmd_OpalSpiSendCommand"             id="0x12A9" group="PMD API"/>
+    <fn name="pmd_OpalSpiGetData"                 id="0x12AA" group="PMD API"/>
+
+    <!-- Windows -->
+
+    <!-- Pulses -->
+
+</module>
+

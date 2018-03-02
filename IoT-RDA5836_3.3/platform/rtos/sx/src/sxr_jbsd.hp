@@ -1,0 +1,178 @@
+/* 
+* Copyright (c) 2006-2016 RDA Microelectronics, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+// ================================================================================
+/// @file         sxr_jbsd.hp
+/// @par Real time executif job scheduler private header file.
+//--------------------------------------------------------------------------------
+/// @defgroup sx_jbsd SX Job Scheduler
+/// @{
+
+/*
+  History    :
+--------------------------------------------------------------------------------
+ Aug 13 2003 |  ADA  | Creation
+================================================================================
+*/
+
+#ifndef __SXR_JBSD_HP__
+#define __SXR_JBSD_HP__
+
+#include "sxr_jbsd.h"
+#include "sxs_io.h"
+
+
+#define SXR_NB_MAX_JOB            24
+
+#define SXR_JOB_ID                ((u32)1 << 31)
+
+#define SXR_NB_MAX_JOB_EVT        16 /* Current implementation maximum value. */
+
+#define SXR_EVT_PENDING            0
+#define SXR_EVT_FRAME_PENDING      1
+#define SXR_EVT_FRAME_EXPECTED     2
+#define SXR_EVT_NXT_FRAME_EXPECTED 3
+
+#ifdef JOB_DEBUG
+ 
+// Arbitrary distribution of the static stack is done through 
+// this structure. 
+typedef struct
+{
+    UINT32* stackTop;
+    UINT32* stackBottom;
+} SXR_JOB_PREAL_STACK_T;
+
+typedef SXR_JOB_PREAL_STACK_T SXR_JOB_STACK_DESCRIPTOR_T[10];
+
+#endif
+
+
+
+typedef struct
+{
+    u32  *Sp;
+    sxr_JbDesc_t const *Desc;
+    void *Data;
+    u32  *StackSwp;
+    u32  *StackTop;
+    u32  *StackBottom;
+    u16   State;
+    u8    Free;
+    u8    IdxSort;
+} sxr_JbCtx_t;
+
+typedef struct
+{
+    u8  Active;
+    u8  LastActive;
+#ifdef JOB_DEBUG
+    u8  ForeSeen;
+#endif
+    u8  InitCnt;
+#ifdef JOB_DEBUG
+    u32 ComingFrom;
+    u8  PreemptedJob;
+#endif
+    u8  IdxFree;
+    u8  IdxQueue;
+    u8  Load;
+    u8  EvtQueue    [SXR_NB_MAX_JOB_EVT];
+    void *EvtData   [SXR_NB_MAX_JOB_EVT];
+    sxr_JbCtx_t Ctx [SXR_NB_MAX_JOB];
+    u8  Sorted      [SXR_NB_MAX_JOB];
+    u8  FirstReady;
+    u8  SkipFrameEndEvt;
+    u32 BitMapReady;
+    u16 EvtStatus   [4];
+#ifdef JOB_DEBUG
+    SXR_JOB_STACK_DESCRIPTOR_T* stackDescriptor;
+#endif
+} sxr_Job_t;
+
+#ifdef __SXR_JBSD_VAR__
+#define DefExtern
+#else
+#define DefExtern extern
+#endif
+
+DefExtern sxr_Job_t *sxr_Job;
+
+#undef DefExtern
+
+
+// =============================================================================
+// sxr_TimerDelivery
+// -----------------------------------------------------------------------------
+/// Notify that waited duration required by a job has expired.
+/// The job remains in Wait state but is marked as ready in a bit map.
+/// @param  Ctx Pointer onto context which contains job number.
+// =============================================================================
+void sxr_TimerDelivery (u32 *Id);
+
+// =============================================================================
+// sxr_JobSetUp
+// -----------------------------------------------------------------------------
+/// Set up a job context
+/// @param  JobNb   Job number
+/// @param  JobCtx  job context to set up.
+// =============================================================================
+void sxr_JobSetUp (u8 JobNb, sxr_JbCtx_t *JobCtx);
+
+// =============================================================================
+// sxr_JobSwap
+// -----------------------------------------------------------------------------
+/// Save current (old) job and restore new job
+/// @param  OldJob  place to store old stack pointer
+/// @param  NewJob  place to get new stack pointer to restore
+// =============================================================================
+void sxr_JobSwap  (u32 **OldJobSp, u32 **NewJobSp);
+
+// =============================================================================
+// sxr_CheckJobNb
+// -----------------------------------------------------------------------------
+/// Check if a JobNb is valid. If invalid, an exception will be raised.
+/// @param  JobNb
+// =============================================================================
+inline void sxr_CheckJobNb (u8 JobNb)
+{
+    if (UNLIKELY(JobNb >= SXR_NB_MAX_JOB))
+    {
+        SXS_RAISE ((_SXR|TABORT|TDB|TNB_ARG(1),TSTR("Job number unconsistent: %d",0x06a6000c), JobNb, sxr_CheckJob ()));
+    }
+}
+
+// =============================================================================
+// sxr_CheckJobNbNil
+// -----------------------------------------------------------------------------
+/// Check if a JobNb is valid or NIL. If not NIL and invalid, an exception
+/// will be raised.
+/// @param  JobNb
+// =============================================================================
+inline void sxr_CheckJobNbNil (u8 JobNb)
+{
+    if (JobNb != SXR_NIL_JOB)
+    {
+        sxr_CheckJobNb(JobNb);
+    }
+}
+
+
+#undef DefExtern
+
+#endif
+
+/// @} // <-- End of sx_jbsd group

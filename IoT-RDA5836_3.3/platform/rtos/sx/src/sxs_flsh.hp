@@ -1,0 +1,139 @@
+/* 
+* Copyright (c) 2006-2016 RDA Microelectronics, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+/*
+================================================================================
+  File         sxs_flsh.hp
+--------------------------------------------------------------------------------
+
+  Scope      : Flash memory handler private header file.
+
+  History    :
+--------------------------------------------------------------------------------
+ Aug 13 2003 |  ADA  | Creation
+================================================================================
+*/
+
+#ifndef __SXS_FLSH_HP__
+#define __SXS_FLSH_HP__
+
+#include "sxs_type.h"
+#include "sxr_cnf.h"
+#include "pal_flsh.h"
+
+#define SXS_FLH_BANK_READY  0x2EAD2EAD
+#define SXS_FLH_BANK_FULL   0x00A000A0
+#define SXS_FLH_BANK_FREE   0xFFFF
+
+
+typedef struct
+{
+ u16 Pad;
+ u16 Length;
+ u32 Id;
+} sxs_BlockFooter_t;
+
+
+typedef struct
+{
+ u8   FirstSector;
+ u8   NbSector;
+ u16  PurgeThres;
+ u32  Size;
+ u16 *StartAdd;
+ u16 *LastAdd;
+} sxs_BankDesc_t;
+
+typedef struct
+{
+ u16  ManufCode;
+ u16  DeviceId;
+} sxs_FlashId_t;
+
+typedef struct
+{
+ sxs_FlashId_t Id;
+
+ u16 *(*FlhSectorToAdd   )(u8);
+ void (*FlhIdentification)(sxs_FlashId_t *);
+ void (*FlhLock          )(u8 *);
+ void (*FlhUnLock        )(u8 *);
+ void (*FlhEraseSector   )(void *);
+ void (*FlhWrite         )(u16 *, u16);
+
+ u8   NbSector;
+
+ sxs_BankDesc_t StaticBnk;
+ sxs_BankDesc_t DynamicBnk [2];
+ sxs_BankDesc_t StackedBnk;
+} sxs_FlashDesc_t;
+
+
+struct
+{
+ const sxs_FlashDesc_t *Desc;
+ u16   *StaticAdd;
+ u16   *DynamicAdd;
+ u16   *StackedAdd;
+ u16 *(*SectorToAdd)(u8);
+ void (*Lock       )(u8 *SectorAddress);
+ void (*UnLock     )(u8 *SectorAddress);
+ void (*EraseSector)(void *Address);
+ void (*Write      )(u16 *Address, u16 Data);
+ u8     DynamicIdx;
+ u8     PurgeRequired;
+ u8     SemIdx;
+} sxs_FlashCtx;
+
+const sxs_BlockFooter_t sxs_FlhBankReady = {0, 0, SXS_FLH_BANK_READY};
+const sxs_BlockFooter_t sxs_FlhBankFull  = {0, 0, SXS_FLH_BANK_FULL};
+
+
+#ifdef __SXS_FILE_IN_RAM__
+#if 0
+const u16 sxs_FileMaxSize [SXS_FLH_NB_FILES_MAX] =
+{
+ 20 * SXS_FLH_NB_FILES_MAX,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+ 512,
+};
+
+u32 sxs_FileOffset [SXS_FLH_NB_FILES_MAX];
+#else
+u16 *sxs_FileMaxSize;
+u32 *sxs_FileOffset;
+#endif
+u8 *sxs_RamFile;
+#endif
+
+u8   sxs_BankBlockRead (u32 Id, u8 *Data, u16 Length, u16 *BankAdd);
+void sxs_GetFileBankLimit (u32 *Start, u32 *End, u16 *BankAdd);
+void sxs_BankErase (const sxs_BankDesc_t *BankDesc);
+#endif
+

@@ -1,0 +1,5 @@
+C_SRC :=   \
+  scsi2.c \
+  bot.c \
+  cbit.c \
+  usbmsc.c 

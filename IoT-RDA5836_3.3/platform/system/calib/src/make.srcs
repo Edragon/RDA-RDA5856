@@ -1,0 +1,26 @@
+# leave this comment and the last \ on last line for easier merge
+C_SRC := \
+    calib_aud.c \
+    calib_daemon_v.c \
+
+
+
+
+#    calib_map.c \
+#    calib_stub_main.c \
+#    calib_convert_struct_v2p2.c \
+#    calib_convert_struct_v2p4.c \
+#    calib_convert_struct_v2p5.c \
+#    
+#     \
+    #calib_sap_user.c \
+    myl1.c \
+    singen.c \
+    calib_stub_task.c \
+    calib_stub_display.c \
+    calib_stub.c \
+    \
+
+
+
+

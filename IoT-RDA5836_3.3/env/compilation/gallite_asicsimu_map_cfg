@@ -1,0 +1,144 @@
+LOGICAL_MAP
+{
+	cached			@0x80000000 to 0x9f000000 and_mask 0x03ffffff;
+	cachedboot		@0x9f000000 to 0xa0000000 and_mask 0x03ffffff;
+	uncached		@0xa0000000 to 0xbf000000 and_mask 0x03ffffff;
+	uncachedboot	@0xbf000000 to 0xc0000000 and_mask 0x03ffffff;
+}
+
+PHYSICAL_MAP
+{
+	flash	@0x2000000 size 32M
+	{
+		simu:	dat
+		{
+			wordsize 16
+			filesize 512K
+			filename "flash%d.dat"
+		}
+		fpga:	load
+		{
+			filename "flash.lod"
+			sectorsize 64K
+			fillvalue 0xffffffff
+			fill on
+            saveheader on
+		}
+		ana:	load
+		{
+			filename "flash.lod"
+			sectormap (8 x 8K, 126 x 64K, 8 x 8K)
+			fillvalue 0xffffffff
+			fill on
+		}
+		eng:	load
+		{
+			filename "flash.lod"
+			sectormap (8 x 8K, 126 x 64K, 8 x 8K)
+			fillvalue 0xffffffff
+			fill on
+		}
+		dev:	load
+		{
+			filename "flash.lod"
+			sectormap (8 x 8K, 126 x 64K, 8 x 8K)
+			fillvalue 0xffffffff
+			fill on
+		}
+
+		xilinx:	xram
+		{
+			filename "x_init_flash_pkg"
+			ramname "FLASH"
+		}
+	}
+	ram		@0x000000 size 16M
+	{
+		simu:	dat
+		{
+			wordsize 16
+			filesize 512K
+			filename "ram%d.dat"
+		}
+		fpga:	load
+		{
+			filename "ram.lod"
+		}
+		ana:	load
+		{
+			filename "ram.lod"
+		}
+		eng:	load
+		{
+			filename "ram.lod"
+		}
+		dev:	load
+		{
+			filename "ram.lod"
+		}
+		
+		xilinx:	xram
+		{
+			filename "x_init_ram_pkg"
+			ramname "RAM"
+		}
+	}
+    
+	intsram	@0x01c00000 size 32K
+	{
+ 		fpga:	load
+		{
+			filename "intsram.lod"
+		}       
+ 		ana:	load
+		{
+			filename "intsram.lod"
+		}       
+ 		eng:	load
+		{
+			filename "intsram.lod"
+		}       
+ 		dev:	load
+		{
+			filename "intsram.lod"
+		}       
+    }
+    
+	bbsram	@0x01980000 size 128K
+	{
+ 		fpga:	load
+		{
+			filename "bbsram.lod"
+		}       
+ 		ana:	load
+		{
+			filename "bbsram.lod"
+		}       
+ 		eng:	load
+		{
+			filename "bbsram.lod"
+		}       
+ 		dev:	load
+		{
+			filename "bbsram.lod"
+		}       
+    }
+
+    introm @0x01e00000 size 2M
+    {
+		simu:	dat
+		{
+			wordsize 32
+			filesize 128K
+			filename "mem_bridge_rom.dat"
+		}
+ 		fpga:	load
+		{
+			filename "mem_bridge_rom.lod"
+		}       
+ 		rom:	load
+		{
+			filename "mem_bridge_rom.lod"
+		}       
+    }
+}

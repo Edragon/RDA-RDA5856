@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simulator", "Simulator.vcxproj", "{69B7878D-91F1-C4F7-73F0-D66A40A40229}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F497A811-0183-B00D-22BA-D235AE230BB2} = {F497A811-0183-B00D-22BA-D235AE230BB2}
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7} = {BAF3142C-4E47-443E-D58B-DA637EB814E7}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "btstack", "..\platform\service\bt\bt_host\arch\rda\btstack.vcxproj", "{BAF3142C-4E47-443E-D58B-DA637EB814E7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "btadp", "..\platform\service\bt\bt_host\arch\rda\btadp.vcxproj", "{F497A811-0183-B00D-22BA-D235AE230BB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7} = {BAF3142C-4E47-443E-D58B-DA637EB814E7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69B7878D-91F1-C4F7-73F0-D66A40A40229}.Debug|Win32.ActiveCfg = Debug|Win32
+		{69B7878D-91F1-C4F7-73F0-D66A40A40229}.Debug|Win32.Build.0 = Debug|Win32
+		{69B7878D-91F1-C4F7-73F0-D66A40A40229}.Release|Win32.ActiveCfg = Release|Win32
+		{69B7878D-91F1-C4F7-73F0-D66A40A40229}.Release|Win32.Build.0 = Release|Win32
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7}.Debug|Win32.Build.0 = Debug|Win32
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7}.Release|Win32.ActiveCfg = Release|Win32
+		{BAF3142C-4E47-443E-D58B-DA637EB814E7}.Release|Win32.Build.0 = Release|Win32
+		{F497A811-0183-B00D-22BA-D235AE230BB2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F497A811-0183-B00D-22BA-D235AE230BB2}.Debug|Win32.Build.0 = Debug|Win32
+		{F497A811-0183-B00D-22BA-D235AE230BB2}.Release|Win32.ActiveCfg = Release|Win32
+		{F497A811-0183-B00D-22BA-D235AE230BB2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

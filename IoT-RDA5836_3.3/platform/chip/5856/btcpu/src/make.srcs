@@ -1,0 +1,15 @@
+
+C_SRC += btcpu_main.c btcpu_gdb_stub.c btcpu_power.c
+
+S_SRC += btcpu_ram.S \
+         btcpu_rom.S \
+         btcpu_irq.S \
+         btcpu_flash.S	\
+         btcpu_gdb.S \
+
+%/btcpu_main.o: CT_MIPS16_CFLAGS=
+%/btcpu_power.o: CT_MIPS16_CFLAGS=
+%/btcpu_rom.o: CT_MIPS16_CFLAGS=
+%/btcpu_irq.o: CT_MIPS16_CFLAGS=
+%/btcpu_flash.o: CT_MIPS16_CFLAGS=
+

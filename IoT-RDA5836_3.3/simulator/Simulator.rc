@@ -1,0 +1,303 @@
+/* 
+* Copyright (c) 2006-2016 RDA Microelectronics, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CoolSimulator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\CoolSimulator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于MP3 Simulator"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "RDA MP3 Simulator 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_COOLSIMULATOR_DIALOG DIALOGEX 0, 0, 116, 244
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "MP3 Simulator"
+MENU IDR_MENU_PHONE
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    LTEXT           "0,0",IDC_STATIC_COORDINATE,74,6,34,17
+    CONTROL         "",IDC_COOLPHONECTRL,
+                    "{AB9D831B-277B-4927-8F89-C1CBBEB9E611}",WS_TABSTOP,7,6,101,231
+END
+
+IDD_DIALOG_SCREEN DIALOG 0, 0, 187, 94
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Screen"
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_BMP_SCREEN,"Static",SS_BITMAP,0,0,11,11
+END
+
+IDD_DIALOG_ATWND DIALOGEX 200, 200, 334, 196
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AT Command"
+FONT 10, "System", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_TEXT,0,0,188,163,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    EDITTEXT        IDC_EDIT_INPUT,1,177,263,14,ES_AUTOHSCROLL | ES_WANTRETURN
+    DEFPUSHBUTTON   "Send",IDC_BUTTON_SEND,273,176,50,14
+    LISTBOX         IDC_LIST_LIST,197,1,131,163,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "Simulator Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Simulator"
+            VALUE "LegalCopyright", "版权所有 (C) 2011"
+            VALUE "OriginalFilename", "Simulator.EXE"
+            VALUE "ProductName", "Simulator 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_COOLSIMULATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 108
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_DIALOG_ATWND, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 195
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_PHONE MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Power On",                    ID_FILE_POWER_ON
+        MENUITEM SEPARATOR
+        MENUITEM "Insert TFlash Card",          IDM_FILE_MOUNT_TFLASH
+        MENUITEM "Remove TFlash Card",          IDM_FILE_UNMOUNT_TFLASH
+        MENUITEM "Insert USB Disk",             IDM_FILE_MOUNT_UDISK
+        MENUITEM "Remove USB Disk",             IDM_FILE_UNMOUNT_UDISK
+        MENUITEM SEPARATOR
+        MENUITEM "Connect PC by USB",           ID_FILE_CONNECT_PC
+        MENUITEM "Disconnect with PC",          ID_FILE_DISCONNECT_PC
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit",                       ID_FILE_Exit
+    END
+    POPUP "Tools"
+    BEGIN
+        MENUITEM "&Load Skins",                 IDM_TOOL_LOAD_SKIN
+        MENUITEM SEPARATOR
+        MENUITEM "Show Zoom Screen",            ID_TOOL_SHOW_SCREEN
+        MENUITEM SEPARATOR
+        MENUITEM "AT Command",                  ID_MENU_ATCMD
+        MENUITEM SEPARATOR
+        MENUITEM "Charging",                    ID_TOOL_CHARGING
+        MENUITEM "Battery Full",                ID_TOOL_BATTERY_FULL
+        MENUITEM "Low Power",                   ID_TOOL_LOW_POWER
+        MENUITEM SEPARATOR
+        MENUITEM "Plug Line In",                ID_MENU_PLUG_LINE_IN
+        MENUITEM "Remove Line In",              ID_MENU_REMOVE_LINE_IN
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "&About",                      IDD_ABOUTBOX
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_COOLSIMULATOR_DIALOG DLGINIT
+BEGIN
+    IDC_COOLPHONECTRL, 0x376, 76, 0
+0x001c, 0x0000, 0x0043, 0x006f, 0x006f, 0x006c, 0x0073, 0x0061, 0x006e, 
+0x0064, 0x0020, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0030, 0x0038, 0x0020, 0x0000, 0x0001, 0x0fb6, 0x0000, 0x23dd, 0x0000, 
+0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于MP3 Simulator(&A)..."
+END
+
+STRINGTABLE
+BEGIN
+    ID_MENU_ATCMD           "Show AT Command Dialog."
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\CoolSimulator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,41 @@
+# this file is to be included in target.def by dev targets that use the 
+# flash_SPI_32M 
+#
+ifeq "${RAM_SIZE_FLAG}" "__4Mbit__"
+    RAM_PHY_SIZE:=          0x00080000
+else
+ifeq "${RAM_SIZE_FLAG}" "__8Mbit__"
+    RAM_PHY_SIZE:=          0x00100000
+else
+ifeq "${RAM_SIZE_FLAG}" "__16Mbit__"
+    RAM_PHY_SIZE:=          0x00200000
+else
+ifeq "${RAM_SIZE_FLAG}" "__32Mbit__"
+    RAM_PHY_SIZE:=          0x00400000
+else
+ifeq "${RAM_SIZE_FLAG}" "__64Mbit__"
+    RAM_PHY_SIZE:=          0x00800000
+else
+    RAM_PHY_SIZE:=          0x00000000
+endif
+endif
+endif
+endif
+endif
+
+    RAM_SIZE:=              ${RAM_PHY_SIZE}
+    FLASH_SIZE:=            0x00400000
+
+ifeq "${UPDATE_PROGRAM}" "1"
+    CALIB_BASE:=            0x003EC000
+    FACT_SETTINGS_BASE:=    0x003EE000
+else
+    CALIB_BASE:=            0x003FC000
+    FACT_SETTINGS_BASE:=    0x003FE000
+endif
+
+    
+    USER_DATA_BASE:=        0x003D0000
+    USER_DATA_SIZE:=        0x00024000        
+    USER_DATA_BLOCK_SIZE:=	0x00000200
+        

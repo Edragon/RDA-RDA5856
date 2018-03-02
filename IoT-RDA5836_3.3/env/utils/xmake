@@ -1,0 +1,126 @@
+#!/bin/bash
+
+# ---------------------------------------
+# Starting info
+if [ "x`echo $0 | grep ^/`" = "x" ]; then
+    PROGRAM_NAME="`pwd`/$0"
+else
+    PROGRAM_NAME="$0"
+fi
+
+echo "Running $PROGRAM_NAME"
+echo
+
+export SOFT_WORKDIR="${SOFT_WORKDIR//\\//}"
+
+# ---------------------------------------
+# Working thread
+
+CMD_ARGS=
+for arg in $@; do
+    # release abbreviation
+    if [ "x$arg" = "xdebug" ] || [ "x$arg" = "xrelease" ] || [ "x$arg" = "xcool_profile" ]; then
+        CMD_ARGS="CT_RELEASE=$arg $CMD_ARGS"
+        continue;
+    fi
+    if [ "x$arg" = "xbb" ]; then
+        CMD_ARGS="$CMD_ARGS BUILD_BCPU_IMAGE=1 BCPUGEN=yes"
+    	  continue;
+    fi
+    if [ "x$arg" = "xbt" ]; then
+        CMD_ARGS="$CMD_ARGS BUILD_BTCPU_IMAGE=1"
+    	  continue;
+    fi    
+    if [ "x$arg" = "xflash" ]; then
+        CMD_ARGS="$CMD_ARGS FLASH_PROG=yes"
+    	  continue;
+    fi
+    if [ "x$arg" = "xusb" ]; then
+        CMD_ARGS="$CMD_ARGS FLASH_PROG=yes FASTPF_USE_USB=1"
+    	  continue;
+    fi
+    if [ "x$arg" = "xtflash" ]; then
+        CMD_ARGS="$CMD_ARGS TFLASH_PROG=yes"
+    	  continue;
+    fi
+
+	if [ "x$arg" = "xrom" ]; then
+        CMD_ARGS="$CMD_ARGS ROM_PROG=yes BUILD_BTCPU_IMAGE=0 CT_USER=ADMIN WITH_FLASH=1 ROM_PROG=1 NO_FPGA_ROM=1 CT_RELEASE=cool_profile"
+    	continue;
+    fi
+
+	  if [ "x$arg" = "xbtrom" ]; then
+        CMD_ARGS="$CMD_ARGS ROM_PROG=yes BUILD_BTCPU_IMAGE=1 CT_USER=ADMIN WITH_FLASH=1 ROM_PROG=1 NO_FPGA_ROM=1 CT_RELEASE=cool_profile"
+    	  continue;
+    fi
+    if [ "x$arg" = "xtflash" ]; then
+        CMD_ARGS="$CMD_ARGS TFLASH_PROG=yes"
+    	  continue;
+    fi
+
+    if [ "x$arg" = "xtest" ]; then
+        CMD_ARGS="$CMD_ARGS UNIT_TEST=yes"
+    	  continue;
+    fi
+    if [[ x$arg == xCASE=bt* ]]; then
+        CMD_ARGS="$CMD_ARGS $arg UNIT_TEST_BT=1"
+    	  continue;
+    fi
+
+    # target abbreviation
+    TARGET=
+    if [ "x$arg" = "xg800" ]; then
+        TARGET="gallite_g800_6432"
+    else
+        for tgt in $TARGET_LIST; do
+            if [ "x$arg" = "x$tgt" ]; then
+                TARGET="gallite_$arg"
+                break
+            fi
+        done
+    fi
+
+    if [ "x$TARGET" != "x" ]; then
+        CMD_ARGS="$CMD_ARGS CT_TARGET=$TARGET"
+    else
+        CMD_ARGS="$CMD_ARGS $arg"
+    fi
+done
+
+if [[ "x$CMD_ARGS" != *AUTO_XCP2H=* ]]; then
+    CMD_ARGS="AUTO_XCP2H=no $CMD_ARGS"
+fi
+
+if [[ "x$CMD_ARGS" != *AUTO_XMD2H=* ]]; then
+    CMD_ARGS="AUTO_XMD2H=no $CMD_ARGS"
+fi
+
+if [[ "x$CMD_ARGS" != *WITH_FLASH=* ]]; then
+    CMD_ARGS="WITH_FLASH=1 $CMD_ARGS"
+fi
+
+#if [[ "x$CMD_ARGS" != *CT_TARGET=* ]]; then
+#    CMD_ARGS="CT_TARGET=gallite_g33 $CMD_ARGS"
+#fi
+
+#if [[ "x$CMD_ARGS" != *CT_RELEASE=* ]]; then
+#    CMD_ARGS="CT_RELEASE=release $CMD_ARGS"
+#fi
+
+if [[ "x$CMD_ARGS" != *CT_USER=* ]]; then
+    CMD_ARGS="CT_USER=ADMIN $CMD_ARGS"
+fi
+
+set -x
+
+ctmake $CMD_ARGS
+
+# ---------------------------------------
+# Ending info
+#STATUS=$?
+#set +x
+
+#echo
+#echo "Exiting $PROGRAM_NAME (Status=$STATUS)"
+
+#exit $STATUS

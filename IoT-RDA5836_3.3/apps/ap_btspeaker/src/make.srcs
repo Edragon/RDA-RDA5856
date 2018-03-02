@@ -1,0 +1,4 @@
+S_SRC :=
+
+C_SRC := ap_mgr.c ap_hfp.c ap_a2dp.c ap_ias.c ap_bas.c ap_pbap.c ap_map.c ap_spp.c ap_avrcp.c ap_hid.c ap_bt_test.c ap_ble.c \
+         ap_wifi_scs.c

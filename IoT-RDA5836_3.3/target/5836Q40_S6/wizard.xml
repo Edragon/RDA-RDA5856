@@ -1,0 +1,671 @@
+<target_wizard>
+    <!--  CHIP -->
+    <module mode="src" category="chip" name="chip" >
+        <macro type="enum" value="5856" name="CT_ASIC"  include="+=" >
+            <comment>ASIC type: gallite/8808/8809/8809p</comment>
+            <enum>
+                <option>5856</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="RDA5856" name="CT_CHIP_PKG"  include="+=" >
+            <comment>Chip package for different sram size</comment>
+            <enum>
+                <option>RDA5856</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="" name="CT_CHIP_DIE"  include="+=" >
+            <comment>Chip die type: 8805/8806 (if CT_ASIC is gallite) or set to null (otherwise)</comment>
+            <enum>
+                <option/>
+            </enum>
+        </macro>
+		<macro type="enum" value="no" name="IS_ARM_PLATFORM"  include="+=" >
+            <comment></comment>
+            <enum>
+                <option>no</option>
+            </enum>
+        </macro>
+        <globalflag type="" value="" name="_RDA5855_TODO_" include="+=" >
+            <comment/>
+        </globalflag>
+		<globalflag type="" value="" name="CHIP_5856" include="+=" >
+            <comment/>
+        </globalflag>
+    </module>
+	
+	<!-- Module rtos -->
+    <module mode="src" category="rtos" name="rtos" >
+        <macro type="enum" value="sx" name="TARGET_OS" include="+=" >
+            <comment> </comment>
+            <enum>
+                <option>sx</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="gcc" name="COMPILER" include="+=" >
+            <comment> </comment>
+            <enum>
+                <option>gcc</option>
+            </enum>
+        </macro>
+    </module>
+	
+	
+    <!-- Module tsd -->
+    <module mode="src" category="edrv" name="tsd" >
+        <macro type="enum" value="rda1207" name="TSD_MODEL" include="+=" >
+            <comment>Touchscreen mode </comment>
+            <enum>
+                <option>rda1207</option>
+            </enum>
+        </macro>
+        <globalflag type="" value="" name="_USED_TSC_KEY_" include="+=" >
+            <comment>Used TSC Key</comment>
+        </globalflag>
+        <globalflag type="" value="" name="_USED_TSC_KEY_IN_LP_MODE_" include="+=" >
+            <comment>Use TSC Key in LP mode</comment>
+        </globalflag>
+    </module>
+	
+    <!-- Module fm -->
+    <module mode="src" category="edrv" name="fmd" >
+        <macro type="enum" value="rdafm_5856" name="FM_MODEL" include="+="  >
+            <comment>FM mode </comment>
+            <enum>
+                <option>rdafm_5856</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="gpio_5856" name="GPIO_MODEL"  include="+=" >
+            <comment>GPIO mode </comment>
+            <enum>
+                <option>gpio_5856</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="FM_USING_I2S"  include="+=" >
+            <comment> 0 - If I2S used; 1 - If Line-in used </comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="FM_USE_32K_CLK_PIN" include="+=" >
+            <comment>1: 32K_CLK pin; 0: CLK_OUT pin</comment>
+            <enum>
+                <option>0</option>
+                <option>1</option>
+            </enum>
+        </macro>
+    </module>
+	
+	<!-- Moduel flash -->
+    <module mode="src" category="edrv" name="memd" >
+        <macro type="enum" value="flsh_spi8m" name="FLSH_MODEL" include="+=" >
+            <comment>SPI Flash (RAM is packaged inside baseband chip)</comment>
+            <enum>
+                <option>flsh_spi32m</option>
+                <option>flsh_spi32x2m</option>
+                <option>flsh_spi64m</option>
+                <option>flsh_spi64x2m</option>
+                <option>flsh_spi128m</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="spi" name="FLSH_IF" include="+=" >
+            <comment>Flash model interface: parallel/spi</comment>
+            <enum>
+                <option>spi</option>
+                <option>parallel</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="__78MHz__" name="SYS_MEMD_FLSH_SPI_CLK" include="+=" >
+            <depends value="spi" name="FLSH_IF" />
+            <comment></comment>
+            <enum>
+                <option>__52MHz__</option>
+                <option>__78MHz__</option>
+                <option>__104MHz__</option>
+                <option>__156MHz__</option>
+            </enum>
+        </macro>
+		     <macro type="enum" value="__78MHz__" name="SYS_MEMD_EBC_CLK" include="+=" >
+            <comment></comment>
+            <enum>
+                <option>__52MHz__</option>
+                <option>__78MHz__</option>
+                <option>__104MHz__</option>
+                <option>__156MHz__</option>
+            </enum>
+        </macro>
+		<targetflag type="" value="" name="MEMD_RAM_IS_ADMUX" include="+=" >
+            <comment>Ram is ADMUX or not </comment>
+        </targetflag>
+    </module>
+	
+	
+    <!-- Module lcd -->
+    <module mode="src" category="edrv" name="lcd" >
+	    <macro type="enum" value="" name="LCD_MODEL"  include="+=" >
+            <comment>MainLCD</comment>
+            <enum>
+                <option></option>
+            </enum>
+        </macro>
+		
+		<macro type="enum" value="" name="LCD_IF"  include="+=" >
+            <comment>LCD interface: gouda/slcd</comment>
+            <enum>
+                <option></option>
+            </enum>
+        </macro>		
+    </module>
+	
+	
+    <!-- Module cam -->
+    <module mode="none" category="edrv" name="camdold" >
+	    <macro type="enum" value="byd3703" name="CAMERA_MODEL"  include="+=" >
+            <comment>camera mode</comment>
+            <enum>
+                <option>byd3703</option>
+            </enum>
+        </macro>
+	    <macro type="enum" value="parallel" name="CAMERA_IF"  include="+=" >
+            <comment>camera mode</comment>
+            <enum>
+                <option>parallel</option>
+            </enum>
+        </macro>
+		<globalflag type="" value="" name="MEM_3216_CAMERA_LARGE_MODE" include="" >
+            <comment>support ?</comment>
+        </globalflag>
+	    <targetflag type="" value="" name="SUPPORT_DUAL_CAMERA" include="" >
+            <comment>Support dual camera</comment>
+        </targetflag>
+		<targetflag type="" value="" name="_CAM_SMALL_MEM_" include="" >
+            <comment>ok</comment>
+        </targetflag>
+	</module>
+	
+	
+    <!-- Module btd -->
+    <module mode="src" category="edrv" name="btd" >
+        <macro type="enum" value="rdabt_5856" name="BT_MODEL"  include="+=" >
+            <comment>Supprt multiple BT mode</comment>
+            <enum>
+                <option>rdabt_5856</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="BUILD_EMULATION" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>0</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="1" name="BUILD_MEMORY_MAP" include="+=" >
+            <comment>build memory map</comment>
+            <enum>
+                <option>1</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="2" name="BUILD_PLATFORM" include="+=" >
+            <comment>build platform</comment>
+            <enum>
+                <option>2</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="4" name="PRH_BS_CFG_SELECT_LEVEL" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>4</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="2" name="COMBINED_HOST" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>2</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="RDA_MOBILE_CHIP" name="RDA_PRODUCT" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>RDA_MOBILE_CHIP</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="mips" name="HAL_VARIANT" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>mips</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="1" name="BT_SHARE_CRYSTAL" include="+=" >
+            <comment>Define BT crystal flag</comment>
+            <enum>
+                <option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="0" name="BT_USE_32K_CLK_PIN" include="+=" >
+            <comment>1: 32K_CLK pin; 0: CLK_OUT pin</comment>
+            <enum>
+                <option>0</option>
+            </enum>
+        </macro>
+        <targetflag type="" value="2" name="COMBINED_HOST" include="+=" >
+            <comment>ok</comment>
+        </targetflag>
+		<globalflag type="" value="" name="__BT_NO_A2DP_PROFILE__" include="" >
+            <comment>ok</comment>
+        </globalflag>
+		<globalflag type="" value="" name="BT_SUPPORT" include="" >
+            <comment>ok</comment>
+        </globalflag>
+		<globalflag type="" value="" name="BT_UART_TRANSPORT" include="" >
+            <comment>ok</comment>
+        </globalflag>
+		<globalflag type="" value="" name="BT_SSP_VOC_SUPPORT" include="+=" >
+            <comment>ok</comment>
+        </globalflag>
+    </module>
+	
+	
+    <!-- Module uart -->
+    <module mode="src" category="edrv" name="uart" >
+		<macro type="enum" value="" name="UART2_MODEL" include="+=" >
+            <comment></comment>
+            <enum>
+                <option></option>
+            </enum>
+        </macro>
+	</module>
+	
+	
+    <!-- Module mcd -->
+    <module mode="src" category="edrv" name="mcd" >
+        <macro type="enum" value="sdmmc" name="MCD_IF"  include="+=" >
+            <comment>Interface: sdmmc/spi</comment>
+            <enum>
+                <option>sdmmc</option>
+            </enum>
+        </macro>
+    </module>
+	
+	<!-- Module I2C -->
+    <module mode="src" category="edrv" name="i2c" >
+        <macro type="enum" value="" name="I2C_MODEL"  include="+=" >
+            <comment>I2C mode </comment>
+            <enum>
+                <option></option>
+            </enum>
+        </macro>
+    </module>
+	
+    <!-- Module aud -->
+    <module mode="src" category="edrv" name="aud" >
+        <macro type="enum" value="1" name="MIC_CAPLESS_MODE" include="+=" >
+            <comment>1- Capless mode, otherwise 0 </comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="AUD_SPK_LINE_L_R_DOUBLE" include="+=" >
+            <comment> Whether to enable speaker line L-R-double mode</comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<targetflag type="" value="" name="RECV_USE_SPK_LINE" include="" >
+            <comment>Receiver uses one speaker line (using left line by default)</comment>
+        </targetflag>
+		<targetflag type="" value="" name="RECV_USE_SPK_LINE_R" include="" >
+            <comment>If using right line, the following macro should be added as well</comment>
+        </targetflag>
+		<targetflag type="" value="" name="AUD_SPK_ON_WITH_LCD" include="" >
+            <comment>Alleviate the "pop" sound on loud speaker for some external audio PAs</comment>
+        </targetflag>
+    </module>
+	
+    <!-- Module wifid -->
+    <module mode="src" category="edrv" name="wifid" >
+        <macro type="enum" value="" name="WIFI_MODEL" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option/>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="WIFI_USE_32K_CLK_PIN" include="+=" >
+            <comment>1 - 32K_CLK pin; 0 - CLK_OUT pin</comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="0" name="USE_EXT_XTAL_32K" include="+=" >
+            <comment>Use 32 K or not </comment>
+            <enum>
+                <option>0</option>
+            </enum>
+        </macro>
+        <macro type="enum" value="__208MHz__" name="SYS_VOC_CLK" include="+=" >
+            <comment>Voc clock config</comment>
+            <enum>
+                <option>__78MHz__</option>
+                <option>__156MHz__</option>
+                <option>__208MHz__</option>
+                <option>__250MHz__</option>
+                <option>__312MHz__</option>
+            </enum>
+        </macro>
+    </module>
+	
+    <!-- Module pmd -->
+    <module mode="src" category="edrv" name="rfd" >
+        <macro type="enum" value="xcv_5856" name="XCV_MODEL" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option>xcv_5856</option>
+            </enum>
+        </macro>
+    </module>
+	
+	<!-- Module rfd -->
+    <module mode="src" category="edrv" name="rfd" >
+        <macro type="enum" value="xcv_5856" name="XCV_MODEL" include="+=" >
+            <comment>ok</comment>
+            <enum>
+                <option></option>
+            </enum>
+        </macro>
+    </module>
+	
+	<!-- Module USB -->
+    <module mode="src" category="edrv" name="usb" >
+	    <macro type="enum" value="umss_storage_flashmc" name="UCTLS_SERVICE"  include="+=" >
+            <comment>umss_storage_flashmc: support flash T card and U card; umss_storage_mc: only support T card and U card</comment>
+            <enum>
+                <option>umss_storage_flashmc</option>
+				<option>umss_storage_mc</option>
+            </enum>
+        </macro>
+	    <macro type="enum" value="yes" name="MCD_USB_HOST_SUPPORT"  include="+=" >
+            <comment></comment>
+            <enum>
+                <option>yes</option>
+				<option>no</option>
+            </enum>
+        </macro>
+	    <macro type="enum" value="yes" name="MCD_MGC_USB"  include="+=" >
+            <comment></comment>
+            <enum>
+                <option>yes</option>
+				<option>no</option>
+            </enum>
+        </macro>
+		<globalflag type="" value="" name="USB_AUDIO_SUPPORT" include="" >
+            <comment>support ?</comment>
+        </globalflag>
+	</module>
+	
+	<!-- Module msic -->
+    <module mode="src" category="service" name="misc" >
+	<comment>Not a real module, but ..</comment>
+        <macro type="enum" value="apps" name="APP_BASEDIR" include="+=" >
+            <comment></comment>
+            <enum>
+				<option>apps</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="No_GUI" name="CT_PROJECT" include="+=" >
+            <comment></comment>
+            <enum>
+                <option>No_GUI</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="31" name="AUD_MAX_LEVEL" include="+=" >
+            <comment></comment>
+            <enum>
+                <option>31</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="yes" name="CT_RESVALID" include="+=" >
+            <comment></comment>
+            <enum>
+                <option>yes</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="dbg_size" name="CT_OPT" include="+=" >
+            <comment>Optimize the code size</comment>
+            <enum>
+                <option>dbg_size</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="1" name="WITHOUT_WERROR" include="+=" >
+            <comment>1 - nonstop on warning in code compiling</comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="yes" name="EXPORT_BOARD_INFO" include="+=" >
+            <comment>Export board information to lod: yes/no</comment>
+            <enum>
+                <option>yes</option>
+				<option>no</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="PM_MODEL FM_MODEL" name="EXPORT_BOARD_FLAGS" include="+=" >
+            <comment>it's quick fix</comment>
+            <enum>
+                <option>PM_MODEL FM_MODEL</option>
+            </enum>
+        </macro>
+		<globalflag type="" value="" name="RESOURCE_SUPPORT" include="+=" >
+            <comment></comment>
+        </globalflag>
+		<globalflag type="" value="" name="RESOURCE_SUPPORT" include="+=" >
+            <comment></comment>
+        </globalflag>
+	    <targetflag type="" value="" name="SPI_REG_DEBUG" include="+=" >
+            <comment></comment>
+        </targetflag>
+    </module>
+	
+	<module mode="src" category="service" name="trace" >
+	<comment>Not a real module, but ..</comment>
+		<globalflag type="" value="" name="NO_REMOTE_COMPUTER" include="+=" >
+            <comment>Individual modules</comment>
+        </globalflag>
+	    <targetflag type="" value="" name="SXS_NO_PRINTF" include="+=" >
+            <comment>Disable this macro if trace is needed in any module</comment>
+        </targetflag>
+		<targetflag type="" value="" name="SXS_NO_DUMP" include="+=" >
+            <comment>No Dump</comment>
+        </targetflag>
+		<targetflag type="" value="" name="APP_NO_TRACE" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="BT_NO_TRACE" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="CSW_NO_TRACE" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="MCI_NO_TRACE" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="HAL_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="VOIS_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="EDRV_NO_TRACE" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="UCTLS_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="UMSS_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+			<targetflag type="" value="" name="UAUD_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="UHID_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		<targetflag type="" value="" name="ARS_NO_PRINTF" include="" >
+            <comment>No trace</comment>
+        </targetflag>
+		
+    </module>
+	
+    <!-- Module nfcd -->
+    <module mode="src" category="edrv" name="nfcd" />
+    <!-- Module gpio -->
+    <module mode="src" category="edrv" name="gpio" />
+    <!-- Module rtos -->
+    <module mode="src" category="" name="rtos" />
+    <!-- Module driver -->
+    <module mode="src" category="service" name="driver" />
+    <!-- Module pm -->
+    <module mode="src" category="service" name="pm" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="dm" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="dsm" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="usbdevice" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="usbhost" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="tools" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="cfw" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="gui" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="at" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="net" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="bt" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="iotapi" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="mdi" >
+		<macro type="enum" value="0" name="VIDEO_PLAYER_SUPPORT" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="1" name="SOUND_RECORDER_SUPPORT" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="0" name="VIDEO_RECORDER_SUPPORT" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="0" name="MEDIA_RM_SUPPORT" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="0" name="MEDIA_MIDI_SUPPORT" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		
+		<macro type="enum" value="1" name="TARGET_MIDI_SUPPORT_OFF" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		
+		<macro type="enum" value="1" name="TARGET_VIDEO_RECORDER_SUPPORT_OFF" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		
+		<macro type="enum" value="1" name="TARGET_VIDEO_PLAYER_SUPPORT_OFF" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		<macro type="enum" value="1" name="TARGET_SOUND_RECORDER_SUPPORT_OFF" include="+=" >
+        <comment></comment>
+            <enum>
+                <option>0</option>
+				<option>1</option>
+            </enum>
+        </macro>
+		
+		
+	    <globalflag type="" value="" name="MIDI_NOT_SUPPORT" include="+=" >
+            <comment></comment>
+        </globalflag>
+		<globalflag type="" value="" name="TARGET_MIDI_SUPPORT_OFF" include="+=" >
+            <comment></comment>
+        </globalflag>
+	    <globalflag type="" value="" name="TARGET_VIDEO_PLAYER_SUPPORT_OFF" include="+=" >
+            <comment></comment>
+        </globalflag>
+		    <globalflag type="" value="" name="TARGET_SOUND_RECORDER_SUPPORT_OFF" include="+=" >
+            <comment></comment>
+        </globalflag>
+		<globalflag type="" value="" name="TARGET_WMA_SUPPORT_OFF" include="" >
+            <comment></comment>
+        </globalflag>
+	    <globalflag type="" value="" name="TARGET_MP3_SUPPORT_OFF" include="" >
+            <comment></comment>
+        </globalflag>
+	    <globalflag type="" value="" name="TARGET_AAC_SUPPORT_OFF" include="+=" >
+            <comment></comment>
+        </globalflag>
+			    <globalflag type="" value="" name="USE_VOC_CVSD" include="+=" >
+            <comment></comment>
+        </globalflag>
+		<globalflag type="" value="" name="A2DP_SAMPLE_44_1K_TO_48K" include="" >
+            <comment></comment>
+        </globalflag>
+		<globalflag type="" value="" name="ABB_DISABLE_NEG_MODE" include="+=" >
+            <comment></comment>
+        </globalflag>
+		
+	</module>
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="base" />
+    <!-- Module tsd -->
+    <module mode="src" category="service" name="wifi" />
+	
+	<module mode="src" category="app" name="ap_btspeaker" />
+	<module mode="src" category="app" name="ap_calendar" /> 
+	<module mode="src" category="app" name="ap_camera" />
+	<module mode="src" category="app" name="ap_wifispeaker" />
+	<module mode="src" category="app" name="ap_fm" />
+	<module mode="src" category="app" name="ap_linein" /> 
+	<module mode="src" category="app" name="ap_music" />
+	<module mode="src" category="app" name="ap_record" />
+    <module mode="src" category="app" name="ap_setting" />
+	<module mode="src" category="app" name="ap_usbdisk" /> 
+	<module mode="src" category="app" name="ap_main" />
+
+</target_wizard>

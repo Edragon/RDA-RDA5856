@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e67f3dad-c8dd-435d-a7f1-da5806f42e54}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f6cad500-54ca-4075-ab6d-6e5ba9c0d724}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Resource Files">
+      <UniqueIdentifier>{2a82a22f-4794-4e26-8d68-bdaf01482293}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="SimulatorLayer">
+      <UniqueIdentifier>{e9b12925-6e93-4b5e-96a5-31b0b4552940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\firmware">
+      <UniqueIdentifier>{0f659d04-c21f-4ada-aaf8-e6cdc399f52e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\firmware\firmwareInc">
+      <UniqueIdentifier>{ef7988be-b53a-4cc5-89a7-26b183a2056a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\firmware\firmwareSrc">
+      <UniqueIdentifier>{15e1d1c6-82f2-450e-99ca-710477a57106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\MCI">
+      <UniqueIdentifier>{05b0f879-d783-44ae-a8e0-ea90674b93bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\MCI\mciInc">
+      <UniqueIdentifier>{845a587f-d2ce-4bd1-877d-c9fc6401d082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\MCI\mciSrc">
+      <UniqueIdentifier>{1dcffe24-d9a8-419f-8ec6-552693651f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\BTAdp">
+      <UniqueIdentifier>{40c987ba-a29c-4e58-b9df-14940eb89b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\BTAdp\btinc">
+      <UniqueIdentifier>{efc82d9c-88a5-41e4-af75-b5f709480633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\BTAdp\btsrc">
+      <UniqueIdentifier>{dbf6450f-5181-4dc4-a1c3-5edf9fe0368c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\WifiAdp">
+      <UniqueIdentifier>{74f1aa16-ceb4-4d89-8fe6-866c5b183ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\WifiAdp\wifiInc">
+      <UniqueIdentifier>{012cd7bf-d739-42b5-8dd2-e499ead914f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SimulatorLayer\WifiAdp\wifisrc">
+      <UniqueIdentifier>{47cfb802-f9b4-4637-9423-ddeffcaa9387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps">
+      <UniqueIdentifier>{93e6d5ba-c138-4b63-9bf4-dcdabc8998d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_calendar">
+      <UniqueIdentifier>{7f6be762-e94f-4a7a-8356-bc5963a7b022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_main">
+      <UniqueIdentifier>{e01a66a1-c121-46a0-92b7-3406be0d9b9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_music">
+      <UniqueIdentifier>{b7a280ad-e669-40bc-af24-8de23d238e85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_fm">
+      <UniqueIdentifier>{307d6051-0c43-49ae-9281-a0f7bf887768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_record">
+      <UniqueIdentifier>{3066de54-4eda-4f1a-b068-fe79f7107367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_setting">
+      <UniqueIdentifier>{c0f4ea37-c3cc-45c7-9ce6-c8fe7c02f841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_idle">
+      <UniqueIdentifier>{d207f1cb-6d44-425e-8981-3eaa4afd0510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_usbdisk">
+      <UniqueIdentifier>{e51fabac-90e4-4b1c-8c42-1427701f3bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_linein">
+      <UniqueIdentifier>{35063201-854f-48f9-b4af-bebd65879e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_charging">
+      <UniqueIdentifier>{43872322-92ae-4ba6-8c0d-0aeabbe8339b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_ime">
+      <UniqueIdentifier>{fa94495a-cfb6-44c4-b95e-56935d9d004d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_wifispeaker">
+      <UniqueIdentifier>{faf51fae-2c41-4a64-9b72-315b2de0e1dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_camera">
+      <UniqueIdentifier>{75d7838f-4dbb-48d9-acf8-ef5e5ef87cfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\ap_btspeaker">
+      <UniqueIdentifier>{39e7cadc-a3c4-4c87-a587-a5634dd13d6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service">
+      <UniqueIdentifier>{8bc98f80-f46e-437a-83fb-07dc54d1ccea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at">
+      <UniqueIdentifier>{559222ac-897f-4414-ac68-0d3d0a66a63c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\ate">
+      <UniqueIdentifier>{c578b616-9d82-454b-a6b6-799a778c99b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\ate\ateInc">
+      <UniqueIdentifier>{9496840c-8dae-4014-827f-897f14010fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\ate\ateSrc">
+      <UniqueIdentifier>{b6bd13b9-543c-40c1-ac58-4c44a9c1cb43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\utility">
+      <UniqueIdentifier>{d86db09b-a165-49fb-b4fc-b5ffc57c5896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\utility\utilInc">
+      <UniqueIdentifier>{447dff44-e388-4d23-a59e-445862a83735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\at\utility\utilSrc">
+      <UniqueIdentifier>{1ea5d3a5-c302-4e82-91b4-1cc875d9895c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\gui">
+      <UniqueIdentifier>{ac78d2b2-f451-4f58-81a8-785b9450c1da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\gui\GuiInc">
+      <UniqueIdentifier>{47fcdff3-7dce-4791-b028-30869319d0b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\gui\GuiSrc">
+      <UniqueIdentifier>{b72a8676-7ade-4845-8f8e-c54c5f237867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\bt">
+      <UniqueIdentifier>{87789dde-dadb-4fc8-8ec4-d25c76208885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\bt\btadp">
+      <UniqueIdentifier>{25a8c694-0e3e-4af9-ac07-11262fd329ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\bt\btadp\Inc">
+      <UniqueIdentifier>{b8af0e0b-fa2a-487c-9501-33574e287fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\base">
+      <UniqueIdentifier>{e13d00cf-9c49-4fb9-926c-4ac931d46574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\net">
+      <UniqueIdentifier>{9a814c5f-9534-481d-8d69-1f806dd1d505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\net\tcpip">
+      <UniqueIdentifier>{37db65b5-41e1-43b5-88bd-816b7c2761e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\net\tcpip\include">
+      <UniqueIdentifier>{30dd869c-3494-4896-bc04-894d6268a615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\wifi">
+      <UniqueIdentifier>{2f72d58a-16a7-4e75-9417-fde2e8de63b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\wifi\include">
+      <UniqueIdentifier>{1a312416-2ba6-4d7c-9d24-7fd62299a4a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\base\bal">
+      <UniqueIdentifier>{e702eacc-0d7a-46f9-a1ed-be0f55cec6aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\iotapi">
+      <UniqueIdentifier>{23857192-f6f8-4751-85f4-df9993bd991e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\iotapi\inc">
+      <UniqueIdentifier>{f62e29c4-735e-4bab-945b-748a692aa4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service\iotapi\src">
+      <UniqueIdentifier>{36c46263-3da6-4fff-b003-ebe09427ca58}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ATDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawLed8s.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="keypad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="simdevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\cos_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\dm_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\drv_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\fmd_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\FS_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\Mci_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\pm_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\sul_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\sxr_os.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\TM_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\uart_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\aac_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\amr_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\ap_audio.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\ap_id3_parser.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\daf_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\simulator_audio_mci.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\vm_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\wav_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\mci\mcisrc\wma_info.c">
+      <Filter>SimulatorLayer\MCI\mciSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\hcit_win32_usb.c">
+      <Filter>SimulatorLayer\BTAdp\btsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\papi_win32.c">
+      <Filter>SimulatorLayer\BTAdp\btsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\bluetooth\src\rdabt_main.c">
+      <Filter>SimulatorLayer\BTAdp\btsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\wifi\src\winpcap_for_wifi.c">
+      <Filter>SimulatorLayer\WifiAdp\wifisrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_calendar\src\ap_calendar.c">
+      <Filter>apps\ap_calendar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_common.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_fselector.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_media.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_message.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_playlist.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\ap_testmode.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\enhanced_oggtag.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_main\src\MainTask.c">
+      <Filter>apps\ap_main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_music\src\ap_music.c">
+      <Filter>apps\ap_music</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_music\src\ap_music_lyric.c">
+      <Filter>apps\ap_music</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_fm\src\ap_fm.c">
+      <Filter>apps\ap_fm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_record\src\ap_record.c">
+      <Filter>apps\ap_record</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_setting\src\ap_setting.c">
+      <Filter>apps\ap_setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_idle\src\ap_idle.c">
+      <Filter>apps\ap_idle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_idle\src\ap_timer.c">
+      <Filter>apps\ap_idle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_usbdisk\src\ap_usbdisk.c">
+      <Filter>apps\ap_usbdisk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_linein\src\ap_linein.c">
+      <Filter>apps\ap_linein</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_charging\src\ap_charging.c">
+      <Filter>apps\ap_charging</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_a2dp.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_avrcp.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_hfp.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_hid.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_ias.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_map.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_obex.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_pbap.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_spp.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_cmdlist.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_common.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_map.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_module.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_parser.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_sa.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ate\src\at_uart.c">
+      <Filter>service\at\ate\ateSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\utility\src\at_trace.c">
+      <Filter>service\at\utility\utilSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\utility\src\at_utility.c">
+      <Filter>service\at\utility\utilSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_lcd_display.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_led8s_display.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_rgblcd_display.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_common.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_delete.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_dialog.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_directory.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_input.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_list.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_menu.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_playlist.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_progress.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_scroll.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_searchlist.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\gui\rgui\src\gui_slider.c">
+      <Filter>service\gui\GuiSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\bal_task_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="SimulatorLayer\firmware\src\mmc_task_win32.c">
+      <Filter>SimulatorLayer\firmware\firmwareSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\bal_framework.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\bal_resource.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\adp_TCPIP_Event.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\Aud_main.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\bal_init.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\cam_main.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\device.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\MultimediaTask.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\base\bal\src\TaskInit.c">
+      <Filter>service\base\bal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\service\iotapi\src\iot_bt.c">
+      <Filter>service\iotapi\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\main\src\at_command_table.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\main\src\at_main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\bt\src\at_cmd_bt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\common\src\at_cmd_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\music\src\at_cmd_music.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\at\ats\record\src\at_cmd_record.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\system\mdi\mmc\src\mmc_audiocommon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_bas.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\platform\edrv\btd\bttask\src\bttask_message.c">
+      <Filter>SimulatorLayer\BTAdp\btsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\apps\ap_btspeaker\src\ap_mgr.c">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Simulator.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ATDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keypad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="simdevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorStart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\base_prv.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\bt_drv.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cfw.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cmn_defs.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cp_csw.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\csw.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\csw_mem_prv.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\csw_shell.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\dbg.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\dm.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\drv.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\errorcode.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\event.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\fmd_m.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\fs.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_host.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_uart.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\lcdd_m.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\pm.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\stdkey.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\sul.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\sxs_io.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\tm.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\ts.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\mci\mciinc\ap_audio.h">
+      <Filter>SimulatorLayer\MCI\mciInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\mci\mciInc\mci.h">
+      <Filter>SimulatorLayer\MCI\mciInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\bluetooth\include\hcit_win32_usb.h">
+      <Filter>SimulatorLayer\BTAdp\btinc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\edrv\btd\rdaStack\include\rdabt_hcit.h">
+      <Filter>SimulatorLayer\BTAdp\btinc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\edrv\btd\rdaStack\include\rdabt_main.h">
+      <Filter>SimulatorLayer\BTAdp\btinc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\wifi\include\winpcap_for_wifi.h">
+      <Filter>SimulatorLayer\WifiAdp\wifiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_calendar\include\ap_calendar.h">
+      <Filter>apps\ap_calendar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_main\include\ap_common.h">
+      <Filter>apps\ap_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_main\include\ap_gui.h">
+      <Filter>apps\ap_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_main\include\ap_media.h">
+      <Filter>apps\ap_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_main\include\ap_message.h">
+      <Filter>apps\ap_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_main\include\MainTask.h">
+      <Filter>apps\ap_main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_music\include\ap_music.h">
+      <Filter>apps\ap_music</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_fm\include\ap_fm.h">
+      <Filter>apps\ap_fm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_record\include\ap_record.h">
+      <Filter>apps\ap_record</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_setting\include\ap_setting.h">
+      <Filter>apps\ap_setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_idle\include\ap_idle.h">
+      <Filter>apps\ap_idle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_usbdisk\include\ap_usbdisk.h">
+      <Filter>apps\ap_usbdisk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_linein\include\ap_linein.h">
+      <Filter>apps\ap_linein</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_charging\include\ap_charging.h">
+      <Filter>apps\ap_charging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureBusiness.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureManager.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\ConfigureRelation.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\Engine.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\EngineConfig.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbapi.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbApp.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbdef.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbim.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbtype.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\gbwchar.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\Misc.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\ProduceBusiness.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_ime\include\ProduceManager.h">
+      <Filter>apps\ap_ime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_wifispeaker\include\downloadmusic.h">
+      <Filter>apps\ap_wifispeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_wifispeaker\include\PlayMedia.h">
+      <Filter>apps\ap_wifispeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_camera\include\ap_camera.h">
+      <Filter>apps\ap_camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_a2dp.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_avrcp.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_hfp.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_map.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_pbap.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_spp.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_common.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_define.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_errcode.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_map.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_module.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_parser.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_sa.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ate\include\at_uart.h">
+      <Filter>service\at\ate\ateInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\utility\include\at_cp.h">
+      <Filter>service\at\utility\utilInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\utility\include\at_trace.h">
+      <Filter>service\at\utility\utilInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\utility\include\at_utility.h">
+      <Filter>service\at\utility\utilInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_const.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_lcd_display.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_led8s_display.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_resource.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\gui_rgblcd_display.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\papi_impl.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\platform_config.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_a2dp.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_avrcp.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_common.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_hcit.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_hfp.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_main.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_manager.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_map.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_pbap.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_uart_drv.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_sharemem.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_spp.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\bt\btadp\include\rdabt_uart.h">
+      <Filter>service\bt\btadp\Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\gui\rgui\include\ap_gui.h">
+      <Filter>service\gui\GuiInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cs_types.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cswtype.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\lwipopts.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_api.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_api_msg.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_cc.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_perf.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_arch_sys.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_autoip.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_debug.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_def.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_dhcp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_dns.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_err.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_etharp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_icmp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_icmp6.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_igmp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet_chksum.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_inet6.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_init.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip_addr.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip_frag.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip6.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ip6_addr.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_mem.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_memp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_memp_std.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netbuf.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netdb.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netif.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_netifapi.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_opt.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_pbuf.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_ppp_oe.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_raw.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sio.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_slipif.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_asn1.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_msg.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_snmp_structs.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sockets.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_stats.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_sys.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_tcp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_tcp_impl.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_timers.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\net\tcpip\include\tcpip_udp.h">
+      <Filter>service\net\tcpip\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\wifi\include\wifi_common.h">
+      <Filter>service\wifi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\wifi\include\wifi_config.h">
+      <Filter>service\wifi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\wifi\include\wifi_os.h">
+      <Filter>service\wifi\include</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\cos.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\platform\service\iotapi\include\iot_bt.h">
+      <Filter>service\iotapi\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\bt\include\at_cmd_bt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\common\include\at_cmd_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\music\include\at_cmd_music.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\record\include\at_cmd_record.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\tcpip\include\at_cmd_tcpip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\at\ats\wifi\include\at_cmd_wifi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\apps\ap_btspeaker\include\ap_mgr.h">
+      <Filter>apps\ap_btspeaker</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_debug.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\aud_snd_types.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_sys.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_overlay.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulatorLayer\firmware\include\hal_timers.h">
+      <Filter>SimulatorLayer\firmware\firmwareInc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\CoolSimulator.ico">
+      <Filter>Header Files\Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Simulator.ico">
+      <Filter>Header Files\Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Simulator.rc2">
+      <Filter>Header Files\Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

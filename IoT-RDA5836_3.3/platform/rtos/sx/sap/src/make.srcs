@@ -1,0 +1,6 @@
+C_SRC := sap_main.c
+ifeq "${GSM_SUPPORT}" "yes"
+C_SRC += sap_stack_cust.c sap_usr.c
+endif
+S_SRC :=
+

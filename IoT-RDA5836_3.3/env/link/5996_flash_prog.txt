@@ -1,0 +1,36 @@
+#
+# MODULE:         scat_sram.txt
+# DESCRIPTION:    ARM scatter-loading map file for RDA5996
+# MAINTAINER:
+# CREATION DATE:
+#
+# LICENSE:
+#     This source code is copyright (C) RDA Microelectronics, Inc.
+#     All rights reserved.
+#
+# SOURCE CONTROL:
+#
+# REVISION HISTORY:
+#
+
+FLASH 0x00108000 0x80000
+{
+    ROM 0x00108000  0x64000
+    {
+        sys_vctr.o (SYS_Vect_Table, +First)
+        sys_boot_dl.o (+RO)
+        sys_fiq_irq.o (+RO)
+        boot_loader.o (+RO)
+        * (+RO)
+    }
+
+    SRAM_RW +0
+    {
+        * (+RW)
+    }
+
+    SRAM_ZI +0
+    {
+        * (+ZI)
+    }
+}

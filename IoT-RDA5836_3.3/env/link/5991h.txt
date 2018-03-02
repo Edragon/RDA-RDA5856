@@ -1,0 +1,56 @@
+#
+# MODULE:         scat_sram.txt
+# DESCRIPTION:    ARM scatter-loading map file for RDA5991H
+# MAINTAINER:
+# CREATION DATE:
+#
+# LICENSE:
+#     This source code is copyright (C) RDA Microelectronics, Inc.
+#     All rights reserved.
+#
+# SOURCE CONTROL:
+#
+# REVISION HISTORY:
+#
+
+FLASH 0x18001000   0x00080000
+{
+    ;; IRAM -> RO
+    ;; RO section starts at code segment base address
+    
+    VECTORS 0x18001000 0x00000100
+    {
+        sys_vctr.o (SYS_Vect_Table, +First)
+    }   
+    CODE +0
+    {
+        sys_vctr.o(BOOT, +RO)
+        sys_boot.o (+RO)
+        boot_loader.o (+RO)
+        * (+RO)
+    }
+
+        
+    ;; DRAM -> ZI + RW + STACK
+    ;; ZI and RW section starts at data segment base address
+    SRAM_ZI 0x00100100 0x0001FF00
+    {
+        * (+ZI)
+    }
+
+    SRAM_RW +0
+    {
+        * (+RW)
+    }
+
+    ;; Stack starts at end of this region
+    ;; And grows downwards for size of this region
+    ARM_LIB_STACK 0x0011d000 EMPTY -0x00007800 
+    {
+    }
+
+    ;; The Process Stack Pointer starts at the top addresses of this region
+    PROCESS_STACK 0x00120000 EMPTY -0x00003000
+    {
+    }
+}

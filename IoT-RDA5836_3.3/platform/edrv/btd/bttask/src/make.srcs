@@ -1,0 +1,19 @@
+S_SRC := 
+
+C_SRC := bttask_message.c
+
+ifeq "$(COMBINED_HOST)" "0"
+ifeq "$(CHIP_HAS_BTCPU)" "1"
+C_SRC += bttask_hci_sharemem.c
+else
+C_SRC += bttask_hci_uart.c
+endif
+else
+ifeq "$(CHIP_HAS_BTCPU)" "1"
+C_SRC += bttask_btcpu.c
+C_SRC += bttask_combined_xcpu.c
+else
+C_SRC += bttask_combined.c
+endif
+endif
+

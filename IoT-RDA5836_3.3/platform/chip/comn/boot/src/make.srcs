@@ -1,0 +1,16 @@
+ifneq "${BUILD_ROM}" "1"
+
+C_SRC +=  boot_loader.c
+C_SRC +=  boot_sector.c
+
+ifeq "${NAND_FLASH}" "1"
+C_SRC +=  boot_sector_nand.c
+endif
+
+S_SRC +=
+
+endif # BUILD_ROM != 1
+
+%/boot_loader.o: CT_MIPS16_CFLAGS=
+%/boot_sector.o: CT_MIPS16_CFLAGS=
+%/boot_sector_nand.o: CT_MIPS16_CFLAGS=

@@ -1,0 +1,100 @@
+/* 
+* Copyright (c) 2006-2016 RDA Microelectronics, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+// ================================================================================
+/// @file         sxr_sbx.hp
+/// @par Systeme executif synchronization boxes management.
+// --------------------------------------------------------------------------------
+/// @defgroup sx_sbx SX Synchronization Boxes
+/// @{
+
+/*
+================================================================================
+  History    :
+--------------------------------------------------------------------------------
+ Aug 13 2003 |  ADA  | Creation
+================================================================================
+*/
+
+#ifndef __SXR_SBX_HP__
+#define __SXR_SBX_HP__
+
+
+#include "sxs_type.h"
+#include "sxr_cnf.h"
+
+
+#define SXR_NO_ENV        0xFFFF
+#define SXR_NO_ID         0xFF
+#define SXR_SBX_ALLOCATED 0xFE
+
+#define SXR_NB_TOTAL_SBX (SXR_NB_MAX_MBX + SXR_NB_MAX_SEM + SXR_NB_MAX_MUTEX)
+
+typedef struct
+{
+    u16 First;
+    u16 Last;
+} MsgQueue_t;
+
+typedef struct
+{
+    u8 First;
+    u8 Next;
+} TaskQueue_t;
+
+typedef struct
+{
+    MsgQueue_t  Msg;
+    TaskQueue_t Task;
+    u8 Id;
+    u8 TrcLev;
+} SbxQueue_t;
+
+typedef struct
+{
+    u32   *Evt;
+    //u32   Evt [SXR_EVT_MBX_SIZE];
+    u16   Next;
+    u8    EvtTag;
+    u8    Pad;
+} SbxEnv_t;
+
+#ifdef __SXR_SBX_VAR__
+#define DefExtern
+#else
+#define DefExtern extern
+#endif
+DefExtern struct
+{
+    SbxEnv_t   *Env;
+    SbxQueue_t *Queue;
+    u32        *RmtSbx;
+    void      *(*TxMsg)(void *);
+    void      *(*RxMsg)(void *);
+    u16        EnvIdxFree;
+    u8         IdxFree;
+    u8         Nb;
+} sxr_Sbx;
+
+//DefExtern u16 SXR_Nb_Max_Mbx_Env;
+//DefExtern u16 SXR_Nb_Max_Mbx;
+//#define SXR_NB_TOTAL_SBX (SXR_Nb_Max_Mbx + SXR_NB_MAX_SEM + SXR_NB_MAX_MUTEX)
+
+#undef DefExtern
+
+#endif
+
+/// @} // <-- End of sx_sbx group

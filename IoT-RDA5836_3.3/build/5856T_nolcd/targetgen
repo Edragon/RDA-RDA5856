@@ -1,0 +1,27 @@
+#############################################
+# Target component definitions
+#############################################
+XCV_MODEL:=            xcv_5856
+PA_MODEL:=             
+SW_MODEL:=             
+FLSH_MODEL:=           flsh_spi8m
+BOARD_CFG_FILE:=       
+#############################################
+# Flash Mapping
+#############################################
+FLASH_SIZE:=           0x00100000
+RAM_SIZE:=             0x00000000
+RAM_PHY_SIZE:=         0x00000000
+CALIB_BASE:=           0x000FE000
+FACT_SETTINGS_BASE:=   0x000FF000
+CODE_BASE:=            0x00000000
+USER_DATA_BASE:=       0x000FC000
+USER_DATA_SIZE:=       0x00002000
+ROMU_FLASH_LAYOUT:=    
+
+#############################################
+# others
+#############################################
+PM_MODEL :=	 pmu_5856
+ FM_MODEL :=	 rdafm_5856
+

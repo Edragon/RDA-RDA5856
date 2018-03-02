@@ -1,0 +1,10 @@
+S_SRC := 
+
+
+ifeq "$(TARGET_OS)" "freertos"
+C_SRC += cos_task_freertos.c cos_timer_freertos.c cos_mem_freertos.c rcm.c
+endif
+
+ifeq "$(TARGET_OS)" "sx"
+C_SRC += cos_task.c cos_task_sxr.c cos_timer.c cos_mem.c cos_cache.c rcm.c
+endif

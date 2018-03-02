@@ -1,0 +1,80 @@
+/* 
+* Copyright (c) 2006-2016 RDA Microelectronics, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+/*
+================================================================================
+  File         sxr_tim.hp
+--------------------------------------------------------------------------------
+
+  Scope      : Time management private header file.
+
+  History    :
+--------------------------------------------------------------------------------
+ Aug 13 2003 |  ADA  | Creation
+================================================================================
+*/
+
+#ifndef __SXR_TIM_HP__
+#define __SXR_TIM_HP__
+
+
+#include "sxs_type.h"
+#include "sxr_cnf.h"
+#include "sxr_tim.h"
+
+#define SXR_DELETED_TIMER      0xFFFFFFFFL
+#define SXR_TIM_NIL_IDX        0xFFFFL
+
+typedef struct
+{
+    u32 PeriodToNext;
+    u32 Ctx [SXR_TIMER_CTX_SIZE];
+//    u32 *Ctx;
+    u16 Id;
+    u16 IdxNext;
+} Timer_t;
+
+
+typedef struct
+{
+    void (*TimerDelivery) (u32 *);
+    void (*SetCntValue) (u32);
+    u32  (*GetCntValue) (void);
+    u16 IdxFirst;
+    u8  NbTimer;
+} TimerCtx_t;
+
+typedef struct
+{
+    Timer_t *TimerEnv;
+    u16     IdxFree;
+} TimerEnv_t;
+
+#ifdef __SXR_TIM_VAR__
+#define DefExtern
+#else
+#define DefExtern extern
+#endif
+//DefExtern TimerCtx_t sxr_TCtx [SXR_TIMER_NB_INSTANCE];
+DefExtern TimerCtx_t *sxr_TCtx;
+DefExtern TimerEnv_t sxr_TEnv;
+
+DefExtern u16 SXR_Nb_Max_Timer_Enveloppe;
+
+#undef DefExtern
+
+#endif
+

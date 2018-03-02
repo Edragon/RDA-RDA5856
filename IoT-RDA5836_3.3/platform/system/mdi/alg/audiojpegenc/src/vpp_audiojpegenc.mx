@@ -1,0 +1,41 @@
+%include
+{vppp_audiojpegenc_sections.h,vppp_audiojpegenc_mp3enc.h,vppp_audiojpegenc_amrjpegenc.h}
+
+%mode
+{MP3_dec: vpp_audiojpegenc_asm_main.c,vpp_audiojpegenc_asm_mp3enc.c}
+{AMR_dec: vpp_audiojpegenc_asm_main.c,vpp_audiojpegenc_asm_amrjpegenc.c}
+
+%start
+{0, 256}
+
+
+%map
+{	
+  COMMON_GLOBAL
+  {
+    vpp_audiojpegenc_asm_main.global    
+  }
+
+  MP3_GLOBAL
+  {
+    vpp_audiojpegenc_asm_mp3enc.global
+  }
+  MP3_LOCAL
+  {
+    vpp_audiojpegenc_asm_mp3enc.local
+  }
+ .=END(COMMON_GLOBAL);
+  AMR_GLOBAL
+  {
+    vpp_audiojpegenc_asm_amrjpegenc.global
+  }
+  AMR_LOCAL
+  {
+    vpp_audiojpegenc_asm_amrjpegenc.local
+  }
+ .=MAX(END(MP3_GLOBAL),END(AMR_GLOBAL));  
+   COMMON_LOCAL
+   {
+     vpp_audiojpegenc_asm_main.local   
+   }   
+}

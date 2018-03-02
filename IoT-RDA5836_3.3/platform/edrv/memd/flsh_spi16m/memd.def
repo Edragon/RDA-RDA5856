@@ -1,0 +1,87 @@
+# this file is to be included in target.def by dev targets that use the 
+# flash_SPI_16M 
+#
+ifeq "${RAM_SIZE_FLAG}" "__4Mbit__"
+    RAM_PHY_SIZE:=          0x00080000
+else
+ifeq "${RAM_SIZE_FLAG}" "__8Mbit__"
+    RAM_PHY_SIZE:=          0x00100000
+else
+ifeq "${RAM_SIZE_FLAG}" "__16Mbit__"
+    RAM_PHY_SIZE:=          0x00200000
+else
+ifeq "${RAM_SIZE_FLAG}" "__32Mbit__"
+    RAM_PHY_SIZE:=          0x00400000
+else
+ifeq "${RAM_SIZE_FLAG}" "__64Mbit__"
+    RAM_PHY_SIZE:=          0x00800000
+else
+    RAM_PHY_SIZE:=          0x00000000
+endif
+endif
+endif    
+endif
+endif
+
+ifeq "${CT_COMPRESS_CODE_SECTION}" "yes"
+ifeq "${COMPRESS_STATE}" "3264"
+    RAM_SIZE?=		0x0037D000
+else
+ifeq "${COMPRESS_STATE}" "3232"
+    RAM_SIZE?=		0x00270000
+else
+ifeq "${COMPRESS_STATE}" "QVGA3232"
+    RAM_SIZE?=		0x002ED000
+else
+ifeq "${COMPRESS_STRATEGY}" "2"
+    RAM_SIZE?=              0x00270000
+else	
+    RAM_SIZE?=              0x003a8000
+endif
+endif    
+endif
+endif
+    XCPU_OVERLAY_BASE:=     ${RAM_SIZE}
+else
+    RAM_SIZE:=              ${RAM_PHY_SIZE}
+endif
+
+# form factor models can define the values directly in their target.def
+    FLASH_SIZE:=            0x00200000
+
+ifeq "${UPDATE_PROGRAM}" "1"
+    CALIB_BASE:=            0x001EC000
+    FACT_SETTINGS_BASE:=    0x001EE000
+else
+    CALIB_BASE:=            0x001FC000
+    FACT_SETTINGS_BASE:=    0x001FE000
+endif
+
+ifeq "${COMPRESS_STATE}" "3264"
+    USER_DATA_BASE:=        0x00383000
+    USER_DATA_SIZE:=        0x00079000
+else
+ifeq "${COMPRESS_STATE}" "3232"
+    USER_DATA_BASE:=        0x00399000
+    USER_DATA_SIZE:=        0x00063000
+else
+    ifeq "${UPDATE_PROGRAM}" "1"
+        USER_DATA_BASE:=        0x001C0000
+        USER_DATA_SIZE:=        0x0002C000
+    else
+        #USER_DATA_BASE:=        0x001D8000
+        #USER_DATA_SIZE:=        0x00024000
+        USER_DATA_BASE:=        0x001F0000
+        USER_DATA_SIZE:=        0x00008000        
+        #Redundant Data 
+        ifeq "$(strip ${REDUNDANT_DATA_REGION})" "1"        
+         REMAIN_BASE:= 0x1F8000
+         REMAIN_SIZE:= 0x4000
+        else
+            REMAIN_BASE:=     0x0
+            REMAIN_SIZE:=     0x0            
+        endif
+    endif    
+endif
+endif           
+    USER_DATA_BLOCK_SIZE:=	0x00000200
